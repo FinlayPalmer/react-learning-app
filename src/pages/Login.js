@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { LearningAppFascade } from "../LearningAppFascade";
+import { LearningAppFascade } from "../model/LearningAppFascade";
 
 function Login() {
   const [inputs, setInputs] = useState({});

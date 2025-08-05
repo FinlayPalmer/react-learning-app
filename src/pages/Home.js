@@ -1,4 +1,4 @@
-import { LearningAppFascade } from "../LearningAppFascade";
+import { LearningAppFascade } from "../model/LearningAppFascade";
 
 function Home() {
     const learningAppFascade = LearningAppFascade.getInstance();
