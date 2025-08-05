@@ -21,7 +21,7 @@ export class LearningAppFascade {
     }
 
     login(username, password){
-        this.#currentAccount = new Account("firstName", "lastName", "email", "username", "password");
+        this.#currentAccount = new Account("firstName", "lastName", "email", username, password);
         return username;
     }
 
@@ -30,11 +30,11 @@ export class LearningAppFascade {
     }
 
     signUp(firstName, lastName, email, username, password) {
-        this.#currentAccount = new Account("firstName", "lastName", "email", "username", "password");
+        this.#currentAccount = new Account(firstName, lastName, email, username, password);
     }
 
     viewAccountDetails() {
-
+        return this.#currentAccount.getFirstName();
     }
 
     startNewLesson(lessonName) {

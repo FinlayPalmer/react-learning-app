@@ -1,10 +1,11 @@
-import userEvent from "@testing-library/user-event";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { LearningAppFascade } from "../LearningAppFascade";
 
 function Login() {
   const [inputs, setInputs] = useState({});
   const navigate = useNavigate();
+  const learningAppFascade = LearningAppFascade.getInstance();
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -14,6 +15,8 @@ function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const {username, password} = inputs;
+    learningAppFascade.login(username, password);
     navigate("/home");
   }
 

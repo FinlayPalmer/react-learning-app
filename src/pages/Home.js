@@ -1,5 +1,10 @@
-const Home = () => {
-  return <h1>Contact Me</h1>;
-};
+import { LearningAppFascade } from "../LearningAppFascade";
+
+function Home() {
+    const learningAppFascade = LearningAppFascade.getInstance();
+    return (
+    <h1>{learningAppFascade.viewAccountDetails()}</h1>
+    )
+}
 
 export default Home;
