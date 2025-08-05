@@ -3,14 +3,16 @@ export class Lesson {
     #questions;
     #currentQuestionNumber;
     #userScore;
-    #fileName;
+    #thumbnailFileName;
+    #vidFileName;
 
-    constructor(title, questions, fileName) {
+    constructor({title, questions, thumbnailFileName, vidFidName}) {
         this.#title = title;
         this.#questions = questions;
         this.#currentQuestionNumber = 0;
         this.#userScore = 0;
-        this.#fileName = fileName;
+        this.#thumbnailFileName = thumbnailFileName;
+        this.#vidFileName = vidFidName;
     }
 
     getTitle() {
@@ -29,8 +31,12 @@ export class Lesson {
         return this.#userScore;
     }
 
-    getFileName() {
-        return this.#fileName;
+    getThumbnailFileName() {
+        return this.#thumbnailFileName;
+    }
+
+    getVidFileName() {
+        return this.#vidFileName;
     }
 
     getLessonComplete() {

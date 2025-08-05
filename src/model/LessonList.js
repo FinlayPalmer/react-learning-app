@@ -15,16 +15,16 @@ export class LessonList {
         return this.#lessonList;
     }
 
-    addLesson(title, questions, fileName) {
-
+    addLesson(lesson) {
+        this.#lessons.push(lesson)
     }
 
     getLesson(title) {
         return new Lesson(title,"","files/vid/d1s1.mp4");
     }
 
-    getListOfAllLesson() {
-
+    getLessons() {
+        return this.#lessons;
     }
 
     save() {
