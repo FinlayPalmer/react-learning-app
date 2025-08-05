@@ -1,4 +1,6 @@
-class LessonList {
+import { Lesson } from "./Lesson";
+
+export class LessonList {
     #lessons;
     static #lessonList;
 

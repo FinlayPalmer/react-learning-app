@@ -1,4 +1,4 @@
-class Account {
+export class Account {
     #firstName;
     #lastName;
     #email;

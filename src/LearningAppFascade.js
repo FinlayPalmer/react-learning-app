@@ -1,4 +1,9 @@
-class LearningAppFascade {
+import { Account } from "./Account";
+import { Lesson } from "./Lesson";
+import { LessonList } from "./LessonList";
+import { Question } from "./Question";
+
+export class LearningAppFascade {
     static #learningAppFascade;
     #currentAccount;
     #currentLesson;
@@ -25,7 +30,7 @@ class LearningAppFascade {
     }
 
     signUp(firstName, lastName, email, username, password) {
-        currentAccount = new Account("firstName", "lastName", "email", "username", "password");
+        this.#currentAccount = new Account("firstName", "lastName", "email", "username", "password");
     }
 
     viewAccountDetails() {

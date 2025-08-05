@@ -1,4 +1,4 @@
-class Lesson {
+export class Lesson {
     #title;
     #questions;
     #currentQuestionNumber;
