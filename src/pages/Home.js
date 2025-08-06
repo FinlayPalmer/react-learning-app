@@ -8,9 +8,11 @@ function Home() {
     const lessonList = LessonList.getInstance();
     const navigate = useNavigate();
 
-    lessonList.getLessons().map((lesson) => (
-      console.log(lesson.getQuestions().getQuestion())
-    ))
+    lessonList.getLessons().forEach(lesson => {
+        lesson.getQuestions().forEach(question => {
+            console.log(question.getQuestion());
+        });
+    });
     const MoveToMainScreen = () => {
 
     }

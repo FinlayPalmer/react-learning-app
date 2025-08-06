@@ -6,7 +6,7 @@ export class Lesson {
     #thumbnailFileName;
     #vidFileName;
 
-    constructor({title, questions, thumbnailFileName, vidFidName}) {
+    constructor(title, questions, thumbnailFileName, vidFidName) {
         this.#title = title;
         this.#questions = questions;
         this.#currentQuestionNumber = 0;

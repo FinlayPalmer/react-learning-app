@@ -8,10 +8,11 @@ import Start from "./pages/Start";
 import Video from "./pages/Video";
 import { LessonList } from './model/LessonList';
 import { Lesson } from './model/Lesson';
+import { Question } from './model/Question';
 import { useEffect, useState } from "react";
 import './index.css';
 
-export default function App() {
+function DataLoader() {
   const lessonList = LessonList.getInstance();
   const [lessons, setLessons] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -22,7 +23,13 @@ export default function App() {
         .then(data => {
           // Convert JSON lessons to Lesson instances and add to LessonList
           data.forEach(item => {
-            const lessonInstance = new Lesson(item);
+            const questions = item.questions.map(jsonquestion => new Question(jsonquestion.question, jsonquestion.questionAnswers));
+            const lessonInstance = new Lesson(
+              item.title,
+              questions,
+              item.thumbnailFileName,
+              item.vidFidName
+            );
             lessonList.addLesson(lessonInstance);
           });
 
@@ -35,6 +42,10 @@ export default function App() {
           setLoading(false);
         });
   }, []);
+}
+
+export default function App() {
+  DataLoader();
 
   return (
     <BrowserRouter>
