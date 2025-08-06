@@ -37,11 +37,8 @@ export class LearningAppFascade {
         return this.#currentAccount.getFirstName();
     }
 
-    startNewLesson(lessonName) {
-        const lessonList = LessonList.getInstance();
-        console.log(lessonName)
-        this.#currentLesson = lessonList.getLesson(lessonName);
-        console.log(this.#currentLesson)
+    startNewLesson(lesson) {
+        this.#currentLesson = lesson;
     }
 
     endLesson() {
@@ -61,7 +58,6 @@ export class LearningAppFascade {
     }
 
     getCurrentLesson() {
-        console.log(this.#currentLesson);
-        return this.#currentLesson.getFileName();
+        return this.#currentLesson;
     }
 }

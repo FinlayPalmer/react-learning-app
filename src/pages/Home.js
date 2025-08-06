@@ -1,35 +1,16 @@
 import { LearningAppFascade } from "../model/LearningAppFascade";
-import { useEffect, useState } from "react";
 import { LessonList } from "../model/LessonList";
 import { Lesson } from "../model/Lesson";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
-    const [lessons, setLessons] = useState([]);
-    const [loading, setLoading] = useState(true);
     const learningAppFascade = LearningAppFascade.getInstance();
     const lessonList = LessonList.getInstance();
+    const navigate = useNavigate();
 
-    console.log(lessonList.getLessons());
-
-    useEffect(() => {
-    fetch('data/lessons.json')
-      .then(res => res.json())
-      .then(data => {
-        // Convert JSON lessons to Lesson instances and add to LessonList
-        data.forEach(item => {
-          const lessonInstance = new Lesson(item);
-          lessonList.addLesson(lessonInstance);
-        });
-
-        // Now get all lessons from LessonList to update React state
-        setLessons(lessonList.getLessons());
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error("Failed to load lessons:", err);
-        setLoading(false);
-      });
-  }, []);
+    lessonList.getLessons().map((lesson) => (
+      console.log(lesson.getQuestions().getQuestion())
+    ))
     const MoveToMainScreen = () => {
 
     }
@@ -39,10 +20,10 @@ function Home() {
     }
     
 
-    const MoveToVideo = (lessonName) => {
-        const learningAppFascade = LearningAppFascade.getInstance();
-        learningAppFascade.startNewLesson(lessonName);
-
+    const MoveToVideo = (lesson) => {
+      const learningAppFascade = LearningAppFascade.getInstance();
+      learningAppFascade.startNewLesson(lesson);
+      navigate("/video");
     }
 
 
@@ -55,7 +36,7 @@ function Home() {
             </sidebar>
             <div className="video-screen">
                 {lessonList.getLessons().map((lesson) => (
-                    <img src={lesson.getThumbnailFileName()} alt="D1S1thumbnail" onClick={() => MoveToVideo('d1s1')} style={{ cursor: 'pointer' }} draggable="false"/>
+                    <img src={lesson.getThumbnailFileName()} alt="D1S1thumbnail" onClick={() => MoveToVideo(lesson)} style={{ cursor: 'pointer' }} draggable="false"/>
                 ))}               
             </div>
         </body>
