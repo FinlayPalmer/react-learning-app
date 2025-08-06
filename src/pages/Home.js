@@ -8,11 +8,6 @@ function Home() {
     const lessonList = LessonList.getInstance();
     const navigate = useNavigate();
 
-    lessonList.getLessons().forEach(lesson => {
-        lesson.getQuestions().forEach(question => {
-            console.log(question.getQuestion());
-        });
-    });
     const MoveToMainScreen = () => {
 
     }
@@ -31,17 +26,17 @@ function Home() {
 
     return (
     <>
-        <body>
-            <sidebar>
+        <div className="body">
+            <div className="sidebar">
                 <button name="home_button" type="button" onClick={MoveToMainScreen}>Home</button>
                 <button name="chatbot_button" type="button" onClick={ActivateChatbot}>Chatbot</button>
-            </sidebar>
+            </div>
             <div className="video-screen">
                 {lessonList.getLessons().map((lesson) => (
                     <img src={lesson.getThumbnailFileName()} alt="D1S1thumbnail" onClick={() => MoveToVideo(lesson)} style={{ cursor: 'pointer' }} draggable="false"/>
                 ))}               
             </div>
-        </body>
+        </div>
     </>
     )
 }
