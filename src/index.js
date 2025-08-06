@@ -10,7 +10,7 @@ import { LessonList } from './model/LessonList';
 import { Lesson } from './model/Lesson';
 import { Question } from './model/Question';
 import { useEffect, useState } from "react";
-import './index.css';
+import "./stylesheets/index.css";
 
 function DataLoader() {
   const lessonList = LessonList.getInstance();
