@@ -17,6 +17,11 @@ function Home() {
     const ActivateChatbot = () => {
         
     }
+
+    const LogOut = () => {
+        learningAppFascade.logout();
+        navigate("/");
+    }
     
 
     const MoveToVideo = (lesson) => {
@@ -32,6 +37,7 @@ function Home() {
             <div className={sidebarStyles.sidebar}>
                 <button name="home_button" type="button" onClick={MoveToMainScreen}>Home</button>
                 <button name="chatbot_button" type="button" onClick={ActivateChatbot}>Chatbot</button>
+                <button name="signout_button" type="button" onClick={LogOut}>Sign Out</button>
             </div>
             <div className={videoGridStyles.videoGrid}>
                 {lessonList.getLessons().map((lesson) => (
