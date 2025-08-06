@@ -23,7 +23,7 @@ function DataLoader() {
         .then(data => {
           // Convert JSON lessons to Lesson instances and add to LessonList
           data.forEach(item => {
-            const questions = item.questions.map(jsonquestion => new Question(jsonquestion.question, jsonquestion.questionAnswers));
+            const questions = item.questions.map(jsonquestion => new Question(jsonquestion.question, jsonquestion.questionAnswers, jsonquestion.timeStamp));
             const lessonInstance = new Lesson(
               item.title,
               questions,

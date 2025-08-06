@@ -4,7 +4,8 @@
         "questions": [
         {
             "question": "What is JSX?",
-            "questionAnswers": ["JavaScript XML", "Java Syntax", "JSON", "None of the above"]
+            "questionAnswers": ["JavaScript XML", "Java Syntax", "JSON", "None of the above"],
+            "timestamp": "0:05"
         }
         ],
         "thumbnailFileName": "assets/img/D1S1thumbnail.png",
@@ -15,7 +16,8 @@
         "questions": [
         {
             "question": "What is JSX?",
-            "questionAnswers": ["JavaScript XML", "Java Syntax", "JSON", "None of the above"]
+            "questionAnswers": ["JavaScript XML", "Java Syntax", "JSON", "None of the above"],
+            "timestamp": "0:05"
         }
         ],
         "thumbnailFileName": "assets/img/D1S1thumbnail.png",
