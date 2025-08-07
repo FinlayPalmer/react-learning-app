@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LearningAppFascade } from "../model/LearningAppFascade";
+import loginStyle from "../stylesheets/login.module.css";
 
 function Login() {
   const [inputs, setInputs] = useState({});
@@ -21,25 +22,27 @@ function Login() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>Enter your name:
-        <input 
-          type="text"
-          name="username" 
-          value={inputs.username || ""}
+    <div className={loginStyle.formContainer}>
+      <form onSubmit={handleSubmit}>
+        <label>Enter your name:
+          <input 
+            type="text"
+            name="username" 
+            value={inputs.username || ""}
+            onChange={handleChange}
+          />
+        </label>
+        <label>Enter your password:
+          <input
+          type="password"
+          name="password"
+          value={inputs.password || ""}
           onChange={handleChange}
-        />
-      </label>
-      <label>Enter your password:
-        <input
-        type="password"
-        name="password"
-        value={inputs.password || ""}
-        onChange={handleChange}
-        />
-      </label>
-      <input type="submit" />
-    </form>
+          />
+        </label>
+        <input type="submit" className={loginStyle.formContainerButton}/>
+      </form>
+    </div>
   )
 }
 

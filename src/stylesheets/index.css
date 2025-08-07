@@ -1,13 +1,12 @@
-.body {
-  display: flex;
-  min-height: 100vh;
+body {
   font-family: Arial, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.body {
+  display: flex;
+  min-height: 100vh;
 }
+
 
 /* Global Styles */
 
