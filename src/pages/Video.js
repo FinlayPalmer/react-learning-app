@@ -27,6 +27,7 @@ function Video() {
 
   const togglePlay = () => {
     const video = videoRef.current;
+    setPlayQuestion(null);
     if (!video) return;
     setVideoPlaying(!videoPlaying);
     if (video.paused) {
@@ -74,6 +75,7 @@ function Video() {
             <div className={questionStyles.questionContainer}>
               <p>{playQuestion.getQuestion()}</p>
             </div>
+            <button onClick={togglePlay}>{"\u25B6"}</button>
           </div>
         :
           <div className={videoContainerStyles.videoContainer}>
