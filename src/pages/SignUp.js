@@ -64,7 +64,7 @@ function SignUp() {
           onChange={handleChange}
           />
         </label>
-        <input type="submit" />
+        <input type="submit" className={loginStyle.formContainerButton}/>
       </form>
     </div>
   )

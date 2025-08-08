@@ -45,8 +45,9 @@ export class LearningAppFascade {
 
     }
     
-    resumeLesson(lessonName) {
-
+    resumeLesson(lessonId) {
+        const lessonList = LessonList.getInstance();
+        this.#currentLesson = lessonList.getLessonFromId(lessonId);
     }
 
     pauseLesson() {

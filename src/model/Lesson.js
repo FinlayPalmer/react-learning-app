@@ -5,14 +5,20 @@ export class Lesson {
     #userScore;
     #thumbnailFileName;
     #vidFileName;
+    #id;
 
-    constructor(title, questions, thumbnailFileName, vidFidName) {
+    constructor(id, title, questions, thumbnailFileName, vidFidName) {
+        this.#id = id;
         this.#title = title;
         this.#questions = questions;
         this.#currentQuestionNumber = 0;
         this.#userScore = 0;
         this.#thumbnailFileName = thumbnailFileName;
         this.#vidFileName = vidFidName;
+    }
+
+    getId() {
+        return this.#id;
     }
 
     getTitle() {
