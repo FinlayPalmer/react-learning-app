@@ -1,13 +1,14 @@
 import { LearningAppFascade } from "../model/LearningAppFascade";
-import { LessonList } from "../model/LessonList";
-import { Lesson } from "../model/Lesson";
 import { useNavigate } from "react-router-dom";
 import sidebarStyles from "../stylesheets/sidebar.module.css";
 import videoGridStyles from "../stylesheets/videoGrid.module.css";
+import { useLessonList } from "../useSingleton/useLessonList";
+import { useLearningAppFascade } from "../useSingleton/useLearningAppFascade";
 
 function Home() {
     const learningAppFascade = LearningAppFascade.getInstance();
-    const lessonList = LessonList.getInstance();
+    const { lessons } = useLessonList();
+    const {startNewLesson} = useLearningAppFascade();
     const navigate = useNavigate();
 
     const MoveToMainScreen = () => {
@@ -25,8 +26,7 @@ function Home() {
     
 
     const MoveToVideo = (lesson) => {
-      const learningAppFascade = LearningAppFascade.getInstance();
-      learningAppFascade.startNewLesson(lesson);
+      startNewLesson(lesson);
       navigate("/video");
     }
 
@@ -40,8 +40,8 @@ function Home() {
                 <button name="signout_button" type="button" onClick={LogOut}>Sign Out</button>
             </div>
             <div className={videoGridStyles.videoGrid}>
-                {lessonList.getLessons().map((lesson) => (
-                    <img src={lesson.getThumbnailFileName()} alt="D1S1thumbnail" onClick={() => MoveToVideo(lesson)} style={{ cursor: 'pointer' }} draggable="false"/>
+                {lessons.map((lesson) => (
+                    <img src={lesson.getThumbnailFileName()} alt="D1S1thumbnail" onClick={() => MoveToVideo(lesson)} style={{ cursor: 'pointer' }} draggable="false" key={lesson.getThumbnailFileName()}/>
                 ))}               
             </div>
         </div>

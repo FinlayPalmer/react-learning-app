@@ -3,9 +3,23 @@ import { Lesson } from "./Lesson";
 export class LessonList {
     #lessons;
     static #lessonList;
+    #listeners;
 
     constructor() {
         this.#lessons = [];
+        this.#listeners = [];
+    }
+
+    subscribe(listener) {
+        this.#listeners.push(listener);
+    }
+
+    unsubscribe(listener) {
+        this.#listeners = this.#listeners.filter(l => l !== listener);
+    }
+
+    notify() {
+        this.#listeners.forEach(fn => fn());
     }
 
     static getInstance() {
@@ -16,7 +30,8 @@ export class LessonList {
     }
 
     addLesson(lesson) {
-        this.#lessons.push(lesson)
+        this.#lessons.push(lesson);
+        this.notify();
     }
 
     getLesson(title) {
@@ -38,7 +53,7 @@ export class LessonList {
     }
 
     getLessons() {
-        return this.#lessons;
+        return [...this.#lessons];
     }
 
     save() {

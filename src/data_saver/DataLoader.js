@@ -1,13 +1,13 @@
-import { LessonList } from '../model/LessonList';
 import { Lesson } from '../model/Lesson';
 import { Question } from '../model/Question';
 import { useEffect, useState } from "react";
-import { LearningAppFascade } from '../model/LearningAppFascade';
+import { useLearningAppFascade } from '../useSingleton/useLearningAppFascade';
+import { useLessonList } from  '../useSingleton/useLessonList';
 
 function DataLoader() {
-  const lessonList = LessonList.getInstance();
   const [isInitializedReady, setIsInitializedReady] = useState(false);
-  const learningAppFascade = LearningAppFascade.getInstance();
+  const { resumeLesson, currentLesson } = useLearningAppFascade();
+  const { addLesson, lessons } = useLessonList();
 
   // Run to Initialize data in App
   useEffect(() => {
@@ -22,7 +22,7 @@ function DataLoader() {
         // Only process data if the component is still mounted
         if (!ignore) {
           // Check if data is already loaded to prevent any race conditions
-          if (lessonList.getLessons().length === 0) {
+          if (lessons.length === 0) {
             data.forEach(item => {
               const questions = item.questions.map(jsonquestion => new Question(jsonquestion.question, jsonquestion.questionAnswers, jsonquestion.timeStamp));
               const lessonInstance = new Lesson(
@@ -32,7 +32,7 @@ function DataLoader() {
                 item.thumbnailFileName,
                 item.vidFidName
               );
-              lessonList.addLesson(lessonInstance);
+              addLesson(lessonInstance);
             });
           }
           setIsInitializedReady(true); // Moved inside to run after data is loaded
@@ -51,52 +51,24 @@ function DataLoader() {
     return () => {
       ignore = true;
     };
-  }, [lessonList]); // Added lessonList as a dependency
+  }, [lessons]);
 
-  /*
-  // Run to Initialize data in App
-  useEffect(() => {
-        const response = fetch('data/lessons.json')
-            .then(res => res.json())
-            .then(data => {
-            // Convert JSON lessons to Lesson instances and add to LessonList
-            data.forEach(item => {
-                const questions = item.questions.map(jsonquestion => new Question(jsonquestion.question, jsonquestion.questionAnswers, jsonquestion.timeStamp));
-                const lessonInstance = new Lesson(
-                item.id,
-                item.title,
-                questions,
-                item.thumbnailFileName,
-                item.vidFidName
-                );
-                lessonList.addLesson(lessonInstance);
-            });
-            })
-            .catch(err => {
-            console.error("Failed to load lessons:", err);
-            });
-        setIsInitializedReady(true);
-    }, []);
-    
     // Load saved lesson from localStorage on mount
   useEffect(() => {
     if (isInitializedReady) {
         const saved = localStorage.getItem("currentLesson");
         if (saved && saved !== "undefined") {
-        console.log("Restoring saved lesson:", saved);
-        learningAppFascade.resumeLesson(saved);
+        resumeLesson(saved);
         }
     }
-  }, [learningAppFascade]);
+  }, [isInitializedReady]);
 
   // Save current lesson to localStorage on unload
   useEffect(() => {
     if (isInitializedReady) {
         const handleBeforeUnload = () => {
-        const currentLesson = learningAppFascade.getCurrentLesson();
         if (currentLesson) {
             const id = currentLesson.getId();
-            console.log("Saving current lesson:", id);
             localStorage.setItem("currentLesson", id);
         }
         };
@@ -106,7 +78,7 @@ function DataLoader() {
         window.removeEventListener("beforeunload", handleBeforeUnload);
         };
     }
-  }, [learningAppFascade]);*/
+  }, [isInitializedReady, currentLesson]);
 
   return null;
 }

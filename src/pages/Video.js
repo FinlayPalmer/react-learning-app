@@ -4,14 +4,16 @@ import { useRef, useState, useEffect } from "react";
 import videoContainerStyles from "../stylesheets/videoContainer.module.css";
 import sidebarStyles from "../stylesheets/sidebar.module.css";
 import questionStyles from "../stylesheets/question.module.css";
+import { useLearningAppFascade } from "../useSingleton/useLearningAppFascade";
 
 function Video() {
   const learningAppFascade = LearningAppFascade.getInstance();
   const navigate = useNavigate();
   const videoRef = useRef(null);
   const [videoPlaying, setVideoPlaying] = useState(false);
-  const [videoFileName, setVideoFileName] = useState(learningAppFascade.getCurrentLesson().getVidFileName());
-  const questions = learningAppFascade.getCurrentLesson().getQuestions();
+  const { videoFileName, rawQuestions } = useLearningAppFascade();
+  console.log('videoFileName:', videoFileName);
+  const questions = rawQuestions || [];
   console.log('questions:', questions);
   const timestamps = questions.map(question => question.getTimeStamp());
   const [triggered, setTriggered] = useState(new Set());
@@ -62,7 +64,7 @@ function Video() {
     return () => {
       video.removeEventListener('timeupdate', handleTimeUpdate);
     };
-  }, [triggered]);
+  }, [triggered, timestamps, videoFileName]);
 
   return (
     <div className="body">
@@ -79,7 +81,7 @@ function Video() {
           </div>
         :
           <div className={videoContainerStyles.videoContainer}>
-            <video ref={videoRef} width="640" height="360" style={{ display: playQuestion ? "none" : "block" }}>
+            <video ref={videoRef} width="640" height="360" style={{ display: playQuestion ? "none" : "block" }} key={videoFileName}>
             <source src={videoFileName} type="video/mp4" />
             Your browser does not support the video tag.
             </video>
