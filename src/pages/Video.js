@@ -1,4 +1,3 @@
-import { LearningAppFascade } from "../model/LearningAppFascade";
 import { useNavigate } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
 import videoContainerStyles from "../stylesheets/videoContainer.module.css";
@@ -7,15 +6,14 @@ import questionStyles from "../stylesheets/question.module.css";
 import { useLearningAppFascade } from "../useSingleton/useLearningAppFascade";
 
 function Video() {
-  const learningAppFascade = LearningAppFascade.getInstance();
   const navigate = useNavigate();
   const videoRef = useRef(null);
   const [videoPlaying, setVideoPlaying] = useState(false);
-  const { videoFileName, rawQuestions } = useLearningAppFascade();
+  const { videoFileName, questions, currentLesson } = useLearningAppFascade();
   console.log('videoFileName:', videoFileName);
-  const questions = rawQuestions || [];
-  console.log('questions:', questions);
-  const timestamps = questions.map(question => question.getTimeStamp());
+  const questionsChecked = questions || [];
+  console.log('questions:', questionsChecked);
+  const timestamps = questionsChecked.map(question => question.getTimeStamp());
   const [triggered, setTriggered] = useState(new Set());
   const [playQuestion, setPlayQuestion] = useState(null);
 
@@ -53,7 +51,7 @@ function Video() {
           !triggered.has(time)
         ) {
           video.pause();
-          setPlayQuestion(learningAppFascade.getCurrentLesson().getQuestions()[0]);
+          setPlayQuestion(currentLesson.getQuestions()[0]);
           setTriggered(prev => new Set(prev).add(time));
         }
       });
@@ -64,7 +62,7 @@ function Video() {
     return () => {
       video.removeEventListener('timeupdate', handleTimeUpdate);
     };
-  }, [triggered, timestamps, videoFileName]);
+  }, [triggered, timestamps, videoFileName, currentLesson]);
 
   return (
     <div className="body">

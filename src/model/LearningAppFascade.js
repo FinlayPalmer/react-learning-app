@@ -1,7 +1,6 @@
 import { Account } from "./Account";
 import { Lesson } from "./Lesson";
 import { LessonList } from "./LessonList";
-import { Question } from "./Question";
 
 export class LearningAppFascade {
     static #learningAppFascade;
@@ -36,15 +35,17 @@ export class LearningAppFascade {
 
     login(username, password){
         this.#currentAccount = new Account("firstName", "lastName", "email", username, password);
+        this.notify();
         return username;
     }
 
     logout() {
-
+        this.notify();
     }
 
     signUp(firstName, lastName, email, username, password) {
         this.#currentAccount = new Account(firstName, lastName, email, username, password);
+        this.notify();
     }
 
     viewAccountDetails() {
@@ -57,7 +58,7 @@ export class LearningAppFascade {
     }
 
     endLesson() {
-
+        this.notify();
     }
     
     resumeLesson(lessonId) {
@@ -67,11 +68,11 @@ export class LearningAppFascade {
     }
 
     pauseLesson() {
-
+        this.notify();
     }
 
     answerQuestion(answer) {
-        
+        this.notify();
     }
 
     getCurrentLesson() {

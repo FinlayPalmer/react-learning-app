@@ -10,6 +10,13 @@ export class LessonList {
         this.#listeners = [];
     }
 
+    static getInstance() {
+        if (!this.#lessonList) {
+            this.#lessonList = new LessonList();
+        }
+        return this.#lessonList;
+    }
+
     subscribe(listener) {
         this.#listeners.push(listener);
     }
@@ -20,14 +27,7 @@ export class LessonList {
 
     notify() {
         this.#listeners.forEach(fn => fn());
-    }
-
-    static getInstance() {
-        if (!this.#lessonList) {
-            this.#lessonList = new LessonList();
-        }
-        return this.#lessonList;
-    }
+    } 
 
     addLesson(lesson) {
         this.#lessons.push(lesson);
@@ -57,6 +57,6 @@ export class LessonList {
     }
 
     save() {
-        
+        this.notify();
     }
 }

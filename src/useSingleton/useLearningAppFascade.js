@@ -19,6 +19,10 @@ export function useLearningAppFascade() {
         videoFileName: currentLesson.getVidFileName(),
         questions: currentLesson.getQuestions(),
         startNewLesson: (lesson) => learningAppFascade.startNewLesson(lesson),
-        resumeLesson: (lessonId) => learningAppFascade.resumeLesson(lessonId)
+        resumeLesson: (lessonId) => learningAppFascade.resumeLesson(lessonId),
+        login: (username, password) => learningAppFascade.login(username, password),
+        signUp: (firstName, lastName, email, username, password) => learningAppFascade.signUp(firstName, lastName, email, username, password),
+        logout: () => learningAppFascade.logout()
+        
     }
 }

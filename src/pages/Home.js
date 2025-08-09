@@ -1,4 +1,3 @@
-import { LearningAppFascade } from "../model/LearningAppFascade";
 import { useNavigate } from "react-router-dom";
 import sidebarStyles from "../stylesheets/sidebar.module.css";
 import videoGridStyles from "../stylesheets/videoGrid.module.css";
@@ -6,9 +5,8 @@ import { useLessonList } from "../useSingleton/useLessonList";
 import { useLearningAppFascade } from "../useSingleton/useLearningAppFascade";
 
 function Home() {
-    const learningAppFascade = LearningAppFascade.getInstance();
     const { lessons } = useLessonList();
-    const {startNewLesson} = useLearningAppFascade();
+    const { logout, startNewLesson } = useLearningAppFascade();
     const navigate = useNavigate();
 
     const MoveToMainScreen = () => {
@@ -20,7 +18,7 @@ function Home() {
     }
 
     const LogOut = () => {
-        learningAppFascade.logout();
+        logout();
         navigate("/");
     }
     

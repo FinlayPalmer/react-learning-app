@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useNavigate, userNavigate } from "react-router-dom";
-import { LearningAppFascade } from "../model/LearningAppFascade";
+import { useLearningAppFascade } from "../useSingleton/useLearningAppFascade";
 import loginStyle from "../stylesheets/login.module.css";
 
 function SignUp() {
     const [inputs, setInputs] = useState({});
     const navigate = useNavigate();
-    const learningAppFascade = LearningAppFascade.getInstance();
+    const { signUp } = useLearningAppFascade();
     
     const handleChange = (event) => {
         const name = event.target.name;
@@ -17,7 +17,7 @@ function SignUp() {
     const handleSubmit = (event) => {
         event.preventDefault();
         const {firstName, lastName, email, username, password} = inputs;
-        learningAppFascade.signUp(firstName, lastName, email, username, password);
+        signUp(firstName, lastName, email, username, password);
         navigate("/home");
     }
 
