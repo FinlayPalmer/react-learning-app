@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import sidebarStyles from "../stylesheets/sidebar.module.css";
-import videoGridStyles from "../stylesheets/videoGrid.module.css";
 import { useLessonList } from "../useSingleton/useLessonList";
 import { useLearningAppFascade } from "../useSingleton/useLearningAppFascade";
+import sidebarStyles from "../stylesheets/sidebar.module.css";
+import videoGridStyles from "../stylesheets/videoGrid.module.css";
 
 function Home() {
     const { lessons } = useLessonList();
@@ -14,23 +14,22 @@ function Home() {
     }
 
     const ActivateChatbot = () => {
-        
+
     }
 
     const LogOut = () => {
         logout();
         navigate("/");
     }
-    
+
 
     const MoveToVideo = (lesson) => {
-      startNewLesson(lesson);
-      navigate("/video");
+        startNewLesson(lesson);
+        navigate("/video");
     }
 
 
     return (
-    <>
         <div className="body">
             <div className={sidebarStyles.sidebar}>
                 <button name="home_button" type="button" onClick={MoveToMainScreen}>Home</button>
@@ -39,11 +38,10 @@ function Home() {
             </div>
             <div className={videoGridStyles.videoGrid}>
                 {lessons.map((lesson) => (
-                    <img src={lesson.getThumbnailFileName()} alt="D1S1thumbnail" onClick={() => MoveToVideo(lesson)} style={{ cursor: 'pointer' }} draggable="false" key={lesson.getThumbnailFileName()}/>
-                ))}               
+                    <img src={lesson.getThumbnailFileName()} alt="D1S1thumbnail" onClick={() => MoveToVideo(lesson)} style={{ cursor: 'pointer' }} draggable="false" key={lesson.getThumbnailFileName()} />
+                ))}
             </div>
         </div>
-    </>
     )
 }
 

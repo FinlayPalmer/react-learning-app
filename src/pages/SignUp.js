@@ -1,70 +1,70 @@
 import { useState } from "react";
-import { useNavigate, userNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useLearningAppFascade } from "../useSingleton/useLearningAppFascade";
 import loginStyle from "../stylesheets/login.module.css";
 
 function SignUp() {
-    const [inputs, setInputs] = useState({});
-    const navigate = useNavigate();
-    const { signUp } = useLearningAppFascade();
-    
-    const handleChange = (event) => {
-        const name = event.target.name;
-        const value = event.target.value;
-        setInputs(values => ({...values, [name]: value}))
-    }
+  const [inputs, setInputs] = useState({});
+  const navigate = useNavigate();
+  const { signUp } = useLearningAppFascade();
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const {firstName, lastName, email, username, password} = inputs;
-        signUp(firstName, lastName, email, username, password);
-        navigate("/home");
-    }
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs(values => ({ ...values, [name]: value }))
+  }
 
-    return (
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const { firstName, lastName, email, username, password } = inputs;
+    signUp(firstName, lastName, email, username, password);
+    navigate("/home");
+  }
+
+  return (
     <div className={loginStyle.formContainer}>
       <form onSubmit={handleSubmit}>
         <label>Enter your First Name:
-          <input 
+          <input
             type="text"
-            name="firstName" 
+            name="firstName"
             value={inputs.firstName || ""}
             onChange={handleChange}
           />
         </label>
         <label>Enter your Last Name:
-          <input 
+          <input
             type="text"
-            name="lastName" 
+            name="lastName"
             value={inputs.lastName || ""}
             onChange={handleChange}
           />
         </label>
         <label>Enter your Email:
-          <input 
+          <input
             type="text"
-            name="email" 
+            name="email"
             value={inputs.email || ""}
             onChange={handleChange}
           />
         </label>
         <label>Enter your Username:
-          <input 
+          <input
             type="text"
-            name="username" 
+            name="username"
             value={inputs.username || ""}
             onChange={handleChange}
           />
         </label>
         <label>Enter your password:
           <input
-          type="text"
-          name="password"
-          value={inputs.password || ""}
-          onChange={handleChange}
+            type="text"
+            name="password"
+            value={inputs.password || ""}
+            onChange={handleChange}
           />
         </label>
-        <input type="submit" className={loginStyle.formContainerButton}/>
+        <input type="submit" className={loginStyle.formContainerButton} />
       </form>
     </div>
   )

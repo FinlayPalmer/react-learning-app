@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { LearningAppFascade } from "../model/LearningAppFascade";
 
 export function useLearningAppFascade() {
-    const learningAppFascade = LearningAppFascade.getInstance(); 
+    const learningAppFascade = LearningAppFascade.getInstance();
     const [currentLesson, setCurrentLesson] = useState(learningAppFascade.getCurrentLesson());
 
     useEffect(() => {
@@ -23,6 +23,5 @@ export function useLearningAppFascade() {
         login: (username, password) => learningAppFascade.login(username, password),
         signUp: (firstName, lastName, email, username, password) => learningAppFascade.signUp(firstName, lastName, email, username, password),
         logout: () => learningAppFascade.logout()
-        
     }
 }

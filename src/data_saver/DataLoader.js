@@ -2,7 +2,7 @@ import { Lesson } from '../model/Lesson';
 import { Question } from '../model/Question';
 import { useEffect, useState } from "react";
 import { useLearningAppFascade } from '../useSingleton/useLearningAppFascade';
-import { useLessonList } from  '../useSingleton/useLessonList';
+import { useLessonList } from '../useSingleton/useLessonList';
 
 function DataLoader() {
   const [isInitializedReady, setIsInitializedReady] = useState(false);
@@ -39,8 +39,8 @@ function DataLoader() {
         }
       } catch (err) {
         console.error("Failed to load lessons:", err);
-        if(!ignore) {
-            setIsInitializedReady(true); // Still signal readiness on error
+        if (!ignore) {
+          setIsInitializedReady(true); // Still signal readiness on error
         }
       }
     };
@@ -53,30 +53,30 @@ function DataLoader() {
     };
   }, [lessons]);
 
-    // Load saved lesson from localStorage on mount
+  // Load saved lesson from localStorage on mount
   useEffect(() => {
     if (isInitializedReady) {
-        const saved = localStorage.getItem("currentLesson");
-        if (saved && saved !== "undefined") {
+      const saved = localStorage.getItem("currentLesson");
+      if (saved && saved !== "undefined") {
         resumeLesson(saved);
-        }
+      }
     }
   }, [isInitializedReady]);
 
   // Save current lesson to localStorage on unload
   useEffect(() => {
     if (isInitializedReady) {
-        const handleBeforeUnload = () => {
+      const handleBeforeUnload = () => {
         if (currentLesson) {
-            const id = currentLesson.getId();
-            localStorage.setItem("currentLesson", id);
+          const id = currentLesson.getId();
+          localStorage.setItem("currentLesson", id);
         }
-        };
+      };
 
-        window.addEventListener("beforeunload", handleBeforeUnload);
-        return () => {
+      window.addEventListener("beforeunload", handleBeforeUnload);
+      return () => {
         window.removeEventListener("beforeunload", handleBeforeUnload);
-        };
+      };
     }
   }, [isInitializedReady, currentLesson]);
 
