@@ -24,7 +24,7 @@ function SignUp() {
   return (
     <div className={loginStyle.formContainer}>
       <form onSubmit={handleSubmit}>
-        <label>Enter your First Name:
+        <label>First Name:
           <input
             type="text"
             name="firstName"
@@ -32,7 +32,7 @@ function SignUp() {
             onChange={handleChange}
           />
         </label>
-        <label>Enter your Last Name:
+        <label>Last Name:
           <input
             type="text"
             name="lastName"
@@ -40,7 +40,7 @@ function SignUp() {
             onChange={handleChange}
           />
         </label>
-        <label>Enter your Email:
+        <label>Email:
           <input
             type="text"
             name="email"
@@ -48,7 +48,7 @@ function SignUp() {
             onChange={handleChange}
           />
         </label>
-        <label>Enter your Username:
+        <label>Username:
           <input
             type="text"
             name="username"
@@ -56,7 +56,7 @@ function SignUp() {
             onChange={handleChange}
           />
         </label>
-        <label>Enter your password:
+        <label>Password:
           <input
             type="text"
             name="password"

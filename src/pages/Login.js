@@ -24,7 +24,7 @@ function Login() {
   return (
     <div className={loginStyle.formContainer}>
       <form onSubmit={handleSubmit}>
-        <label>Enter your name:
+        <label>Username:
           <input
             type="text"
             name="username"
@@ -32,7 +32,7 @@ function Login() {
             onChange={handleChange}
           />
         </label>
-        <label>Enter your password:
+        <label>Password:
           <input
             type="password"
             name="password"
