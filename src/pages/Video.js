@@ -3,7 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import { useLearningAppFascade } from "../useSingleton/useLearningAppFascade";
 import videoContainerStyles from "../stylesheets/videoContainer.module.css";
 import sidebarStyles from "../stylesheets/sidebar.module.css";
-import questionStyles from "../stylesheets/question.module.css";
+import QuestionCard from "../components/QuestionCard";
 
 function Video() {
   const navigate = useNavigate();
@@ -68,12 +68,7 @@ function Video() {
         <button name="chatbot_button" type="button" onClick={ActivateChatbot}>Chatbot</button>
       </div>
       {playQuestion ?
-        <div className={videoContainerStyles.videoContainer}>
-          <div className={questionStyles.questionContainer}>
-            <p>{playQuestion.getQuestion()}</p>
-          </div>
-          <button onClick={togglePlay}>{"\u25B6"}</button>
-        </div>
+        <QuestionCard question={playQuestion} togglePlay={togglePlay}/>
         :
         <div className={videoContainerStyles.videoContainer}>
           <video ref={videoRef} width="640" height="360" style={{ display: playQuestion ? "none" : "block" }} key={videoFileName}>
