@@ -3,8 +3,9 @@ body {
 }
 
 .body {
-  display: flex;
-  min-height: 100vh;
+  display: block;
+  /*display: flex;
+  min-height: 100vh;*/
 }
 
 
