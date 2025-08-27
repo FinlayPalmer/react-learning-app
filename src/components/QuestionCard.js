@@ -31,12 +31,13 @@ function QuestionCard(props) {
         correctClicked ? (
           <div className={questionStyles.questionContainer}>
             <p className={questionStyles.questionContainerTitle}>Correct!</p>
+            <p>Here's why: </p>
             <button onClick={props.togglePlay}>{"\u25B6"}</button>
           </div>
         ) : (
           <div className={questionStyles.questionContainer}>
             <p className={questionStyles.questionContainerTitle}>Incorrect!</p>
-            <button >Let's figure out why</button>
+            <button>Let's figure out why</button>
             <button onClick={props.togglePlay}>{"\u25B6"}</button>
           </div>
         )
