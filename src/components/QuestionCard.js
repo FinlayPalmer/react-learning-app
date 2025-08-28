@@ -9,8 +9,6 @@ function QuestionCard(props) {
 
   const answerQuestion = () => {
     setSubmitClicked(true);
-    console.log(props.question.getQuestionAnswers()[0]);
-    console.log(selectedAnswer);
     if (selectedAnswer == null || selectedAnswer !== props.question.getQuestionAnswers()[0]) {
       return;
     }
