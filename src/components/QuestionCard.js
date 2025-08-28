@@ -9,7 +9,9 @@ function QuestionCard(props) {
 
   const answerQuestion = () => {
     setSubmitClicked(true);
-    if (selectedAnswer === null || selectedAnswer !== props.question.getQuestionAnswers()[0]) {
+    console.log(props.question.getQuestionAnswers()[0]);
+    console.log(selectedAnswer);
+    if (selectedAnswer == null || selectedAnswer !== props.question.getQuestionAnswers()[0]) {
       return;
     }
     setCorrectClicked(true);
@@ -21,9 +23,13 @@ function QuestionCard(props) {
         <div className={questionStyles.questionContainer}>
           <p className={questionStyles.questionContainerTitle}>{props.question.getQuestion()}</p>
           <div className={questionStyles.questionOptions}>
-            {props.question.getQuestionAnswers().map((questionAnswer) => (
-              <p className={questionStyles.questionOption} onClick={() => setSelectedAnswer(questionAnswer)}>{questionAnswer}</p>
-            ))}
+            {props.scrambledQuestionOptions.map((questionAnswer) => 
+            questionAnswer!==selectedAnswer ? (
+              <p className={questionStyles.questionOption} onClick={() => setSelectedAnswer(questionAnswer)} >{questionAnswer}</p>
+            ) : (
+              <p className={questionStyles.questionOptionHighlighted} onClick={() => setSelectedAnswer(questionAnswer)} >{questionAnswer}</p>
+          )
+          )}
           </div>
           <button onClick={answerQuestion}>{"\u21B5"}</button>
         </div>

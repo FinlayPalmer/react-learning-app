@@ -69,7 +69,7 @@ function Video() {
         </button>
       </div>
       {playQuestion ? (
-        <QuestionCard question={playQuestion} togglePlay={togglePlay} />
+        <QuestionCard question={playQuestion} scrambledQuestionOptions={[...playQuestion.getQuestionAnswers()].sort(() => Math.random() - 0.5)} togglePlay={togglePlay} />
       ) : (
         <div className={videoContainerStyles.videoContainer}>
           <video
