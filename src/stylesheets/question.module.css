@@ -45,13 +45,11 @@
 
 .questionOptionHighlighted {
   padding: 1rem;
-  background-color: #ffffff;
-  border: 2px solid #e0e0e0;
+  background-color: #f6f0ff;
+  border: 2px solid #c8a0ff;
   border-radius: 12px;
   cursor: pointer;
   text-align: center;
   transition: all 0.2s ease-in-out;
-  background-color: #f0f8ff;
-  border-color: #a0c4ff;
   transform: scale(1.02);
 }

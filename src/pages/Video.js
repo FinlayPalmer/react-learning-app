@@ -42,10 +42,11 @@ function Video() {
     }
     const handleTimeUpdate = () => {
       const currentTime = video.currentTime;
-      timestamps.forEach((time) => {
+      timestamps.forEach((time, index) => {
         if (currentTime >= time && !triggered.has(time)) {
           video.pause();
-          setPlayQuestion(currentLesson.getQuestions()[0]);
+          setVideoPlaying(false);
+          setPlayQuestion(currentLesson.getQuestions()[index]);
           setTriggered((prev) => new Set(prev).add(time));
         }
       });
@@ -69,24 +70,29 @@ function Video() {
         </button>
       </div>
       {playQuestion ? (
-        <QuestionCard question={playQuestion} scrambledQuestionOptions={[...playQuestion.getQuestionAnswers()].sort(() => Math.random() - 0.5)} togglePlay={togglePlay} />
+        <QuestionCard
+          question={playQuestion}
+          scrambledQuestionOptions={[...playQuestion.getQuestionAnswers()].sort(
+            () => Math.random() - 0.5
+          )}
+          togglePlay={togglePlay}
+          style={{ display: playQuestion ? "block" : "none" }}
+        />
       ) : (
-        <div className={videoContainerStyles.videoContainer}>
-          <video
-            ref={videoRef}
-            width="640"
-            height="360"
-            style={{ display: playQuestion ? "none" : "block" }}
-            key={videoFileName}
-          >
-            <source src={videoFileName} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <button onClick={togglePlay}>
-            {videoPlaying ? "\u23F8" : "\u25B6"}
-          </button>
-        </div>
+        <></>
       )}
+      <div
+        className={videoContainerStyles.videoContainer}
+        style={{ display: playQuestion ? "none" : "flex" }}
+      >
+        <video ref={videoRef} width="640" height="360" key={videoFileName}>
+          <source src={videoFileName} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <button onClick={togglePlay}>
+          {videoPlaying ? "\u23F8" : "\u25B6"}
+        </button>
+      </div>
     </div>
   );
 }

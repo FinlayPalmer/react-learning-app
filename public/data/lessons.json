@@ -7,6 +7,11 @@
             "question": "What is JSX?",
             "questionAnswers": ["JavaScript XML", "Java Syntax", "JSON", "None of the above"],
             "timeStamp": "5"
+        },
+        {
+            "question": "What is JSX?",
+            "questionAnswers": ["JavaScript XML", "Java Syntax", "JSON", "None of the above"],
+            "timeStamp": "10"
         }
         ],
         "thumbnailFileName": "assets/img/D1S1thumbnail.png",
