@@ -35,6 +35,10 @@ function Video() {
     }
   };
 
+  const videoEnded = () => {
+    
+  }
+
   useEffect(() => {
     const video = videoRef.current;
     if (!video) {
@@ -85,7 +89,7 @@ function Video() {
         className={videoContainerStyles.videoContainer}
         style={{ display: playQuestion ? "none" : "flex" }}
       >
-        <video ref={videoRef} width="640" height="360" key={videoFileName}>
+        <video ref={videoRef} width="640" height="360" key={videoFileName} onEnded={videoEnded}>
           <source src={videoFileName} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
