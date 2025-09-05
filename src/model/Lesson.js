@@ -10,11 +10,16 @@ export class Lesson {
     constructor(id, title, questions, thumbnailFileName, vidFidName) {
         this.#id = id;
         this.#title = title;
-        this.#questions = questions;
+        if (!Array.isArray(questions)) {
+            this.#questions = [];
+        } else {
+            this.#questions = questions;
+        }
         this.#currentQuestionNumber = 0;
         this.#userScore = 0;
         this.#thumbnailFileName = thumbnailFileName;
         this.#vidFileName = vidFidName;
+        console.log("Lesson constructor questions:", this.#questions, Array.isArray(questions));
     }
 
     getId() {
@@ -83,5 +88,20 @@ export class Lesson {
 
     endLesson() {
         
+    }
+
+    getSummary() {
+        var totalAnswered = 0;
+        var totalCorrect = 0;
+        this.#questions.forEach(question => {
+            if (question.getUserAnswered()) {
+                totalAnswered++;
+                if (question.getUserGotAnswerCorrect()) {
+                    totalCorrect++;
+                }
+            }
+        });
+        var summary = [totalCorrect, totalAnswered];
+        return summary;
     }
 }

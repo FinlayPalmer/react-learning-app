@@ -78,4 +78,8 @@ export class LearningAppFascade {
     getCurrentLesson() {
         return this.#currentLesson;
     }
+
+    getSummary() {
+        return this.#currentLesson.getSummary();
+    }
 }

@@ -4,14 +4,16 @@ import { useLearningAppFascade } from "../useSingleton/useLearningAppFascade";
 import sidebarStyles from "../stylesheets/sidebar.module.css";
 import videoContainerStyles from "../stylesheets/videoContainer.module.css";
 import QuestionCard from "../components/QuestionCard";
+import SummaryScreen from "../components/SummaryScreen";
 
 function Video() {
   const navigate = useNavigate();
   const videoRef = useRef(null);
   const [videoPlaying, setVideoPlaying] = useState(false);
+  const [videoIsEnded, setVideoIsEnded] = useState(false);
   const [triggered, setTriggered] = useState(new Set());
   const [playQuestion, setPlayQuestion] = useState(null);
-  const { videoFileName, questions, currentLesson } = useLearningAppFascade();
+  const { videoFileName, questions, currentLesson, summary } = useLearningAppFascade();
   const questionsChecked = questions || [];
   const timestamps = questionsChecked.map((question) =>
     question.getTimeStamp()
@@ -21,7 +23,7 @@ function Video() {
     navigate("/home");
   };
 
-  const ActivateChatbot = () => {};
+  const ActivateChatbot = () => { };
 
   const togglePlay = () => {
     const video = videoRef.current;
@@ -36,7 +38,7 @@ function Video() {
   };
 
   const videoEnded = () => {
-    
+    setVideoIsEnded(true);
   }
 
   useEffect(() => {
@@ -62,6 +64,22 @@ function Video() {
       video.removeEventListener("timeupdate", handleTimeUpdate);
     };
   }, [triggered, timestamps, videoFileName, currentLesson]);
+
+  if (videoIsEnded) {
+    return (
+      <div className={sidebarStyles.body}>
+        <div className={sidebarStyles.sidebar}>
+          <button name="home_button" type="button" onClick={MoveToMainScreen}>
+            Home
+          </button>
+          <button name="chatbot_button" type="button" onClick={ActivateChatbot}>
+            Chatbot
+          </button>
+        </div>
+        <SummaryScreen totalCorrect={summary[0]} totalAnswered={summary[1]}/>
+      </div>
+    );
+  }
 
   return (
     <div className={sidebarStyles.body}>

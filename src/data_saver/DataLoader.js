@@ -51,7 +51,7 @@ function DataLoader() {
     return () => {
       ignore = true;
     };
-  }, [lessons]);
+  }, [addLesson, lessons.length]);
 
   // Load saved lesson from localStorage on mount
   useEffect(() => {
@@ -61,7 +61,7 @@ function DataLoader() {
         resumeLesson(saved);
       }
     }
-  }, [isInitializedReady]);
+  }, [isInitializedReady, resumeLesson]);
 
   // Save current lesson to localStorage on unload
   useEffect(() => {
