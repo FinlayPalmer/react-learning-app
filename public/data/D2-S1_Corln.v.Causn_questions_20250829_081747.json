@@ -33,11 +33,7 @@
       "segment_text": "() So this practice is called data drenching () where we have thousands of variables in our data set. () We just rather than understanding our data set altogether, () we just start to compare every variable () with every other variable just randomly. () And so what is the best way to go instead of doing this () if you don't understand the data? () The first thing is to come up with a hypothesis.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -45,11 +41,7 @@
       "transcript_analysis": {},
       "frame_analysis_confidence": 0.7,
       "transcript_analysis_confidence": 0,
-      "educational_indicators": [
-        "Data",
-        "correlation",
-        "Instead"
-      ],
+      "educational_indicators": ["Data", "correlation", "Instead"],
       "concept_extraction_method": "visual_first",
       "visual_elements": "Slide content: aN\nWhy this works ae\nData dredging: _\u2014\n\no | have 25,153 variables in my database.\n\u00a9 | compare all th...",
       "strategic_tier": "unknown",
@@ -78,11 +70,7 @@
       "segment_text": "() So this practice is called data drenching () where we have thousands of variables in our data set. () We just rather than understanding our data set altogether, () we just start to compare every variable () with every other variable just randomly. () And so what is the best way to go instead of doing this () if you don't understand the data? () The first thing is to come up with a hypothesis.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -90,11 +78,7 @@
       "transcript_analysis": {},
       "frame_analysis_confidence": 0.7,
       "transcript_analysis_confidence": 0,
-      "educational_indicators": [
-        "Data",
-        "correlation",
-        "Instead"
-      ],
+      "educational_indicators": ["Data", "correlation", "Instead"],
       "concept_extraction_method": "visual_first",
       "visual_elements": "Slide content: aN\nWhy this works ae\nData dredging: _\u2014\n\no | have 25,153 variables in my database.\n\u00a9 | compare all th...",
       "strategic_tier": "unknown",
@@ -123,11 +107,7 @@
       "segment_text": "() So this practice is called data drenching () where we have thousands of variables in our data set. () We just rather than understanding our data set altogether, () we just start to compare every variable () with every other variable just randomly. () And so what is the best way to go instead of doing this () if you don't understand the data? () The first thing is to come up with a hypothesis.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -135,11 +115,7 @@
       "transcript_analysis": {},
       "frame_analysis_confidence": 0.7,
       "transcript_analysis_confidence": 0,
-      "educational_indicators": [
-        "Data",
-        "correlation",
-        "Instead"
-      ],
+      "educational_indicators": ["Data", "correlation", "Instead"],
       "concept_extraction_method": "visual_first",
       "visual_elements": "Slide content: aN\nWhy this works ae\nData dredging: _\u2014\n\no | have 25,153 variables in my database.\n\u00a9 | compare all th...",
       "strategic_tier": "unknown",
@@ -168,11 +144,7 @@
       "segment_text": "() What about this? () So this graph basically shows that countries () who consumes more chocolate are more likely () to have more number of Nobel laureates in their, () so Switzerland has the most number of Nobel laureates. () Is this true? () Maybe. () I can share the data with you guys later on () if you don't believe the data.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "analyze",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -220,11 +192,7 @@
       "segment_text": "() What about this? () So this graph basically shows that countries () who consumes more chocolate are more likely () to have more number of Nobel laureates in their, () so Switzerland has the most number of Nobel laureates. () Is this true? () Maybe. () I can share the data with you guys later on () if you don't believe the data.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -272,11 +240,7 @@
       "segment_text": "() What about this? () So this graph basically shows that countries () who consumes more chocolate are more likely () to have more number of Nobel laureates in their, () so Switzerland has the most number of Nobel laureates. () Is this true? () Maybe. () I can share the data with you guys later on () if you don't believe the data.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "evaluate",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -321,11 +285,7 @@
       "segment_text": "() Now let's talk about causality. () So causality, as we understand, () it's a relation between two given variables () where you can establish relations such as A causes B. () And we see causality in our day-to-day lifestyle. () And this is a basic term which you guys have () clearly understood that correlation is not causation.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -373,11 +333,7 @@
       "segment_text": "() Now let's talk about causality. () So causality, as we understand, () it's a relation between two given variables () where you can establish relations such as A causes B. () And we see causality in our day-to-day lifestyle. () And this is a basic term which you guys have () clearly understood that correlation is not causation.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -425,11 +381,7 @@
       "segment_text": "() Now let's talk about causality. () So causality, as we understand, () it's a relation between two given variables () where you can establish relations such as A causes B. () And we see causality in our day-to-day lifestyle. () And this is a basic term which you guys have () clearly understood that correlation is not causation.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -474,11 +426,7 @@
       "segment_text": "() So the kids who are younger than two years of old () who slept with light on, () were more likely to develop shortsightedness () when they grew up. () However, so in the current study of about 1200 children () conducted by Ohio State University researchers, () they found there is no relation () between the nighttime lighting () and the development of the shortsightedness () or nearsightedness. () It does not matter if you sleep in a dark room, () light room, or you have a nightlight on.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -523,11 +471,7 @@
       "segment_text": "() So the kids who are younger than two years of old () who slept with light on, () were more likely to develop shortsightedness () when they grew up. () However, so in the current study of about 1200 children () conducted by Ohio State University researchers, () they found there is no relation () between the nighttime lighting () and the development of the shortsightedness () or nearsightedness. () It does not matter if you sleep in a dark room, () light room, or you have a nightlight on.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -575,11 +519,7 @@
       "segment_text": "() So the kids who are younger than two years of old () who slept with light on, () were more likely to develop shortsightedness () when they grew up. () However, so in the current study of about 1200 children () conducted by Ohio State University researchers, () they found there is no relation () between the nighttime lighting () and the development of the shortsightedness () or nearsightedness. () It does not matter if you sleep in a dark room, () light room, or you have a nightlight on.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -627,11 +567,7 @@
       "segment_text": "() So the question is, () it says you have to figure out the flaw in this study. () Okay. () So the first assumption, () the first time they did study in 99, () they claimed or they got this result () that kids who slept with nightlight on () were more likely to develop shortsightedness () when they grew up.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -679,11 +615,7 @@
       "segment_text": "() So the question is, () it says you have to figure out the flaw in this study. () Okay. () So the first assumption, () the first time they did study in 99, () they claimed or they got this result () that kids who slept with nightlight on () were more likely to develop shortsightedness () when they grew up.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -713,9 +645,7 @@
         "text": "The current study found no association between nighttime lighting and the development of nearsightedness. What type of relationship does this suggest about the potential cause of myopia?",
         "answer": "B",
         "detailed_answer": "This suggests that the researchers were unable to find any evidence that nighttime lighting could be a contributing factor to the development of nearsightedness, and therefore it is unlikely to be a cause. The correct answer is 'No association' because the study found no correlation between nighttime lighting and myopia, but option B states that there may not be an actual causal link.",
-        "options": [
-          "A direct causal link"
-        ],
+        "options": ["A direct causal link"],
         "type": "mcq",
         "difficulty": "hard",
         "topic": "Issue",
@@ -728,11 +658,7 @@
       "segment_text": "() So the question is, () it says you have to figure out the flaw in this study. () Okay. () So the first assumption, () the first time they did study in 99, () they claimed or they got this result () that kids who slept with nightlight on () were more likely to develop shortsightedness () when they grew up.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -780,11 +706,7 @@
       "segment_text": "() You'll get the highest grade () of all the people sitting here. () What? () Like time. () Time? () Okay, how does time factors in here? () Because if you could go into the lecture, () obviously you're doing something else in your time.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -792,11 +714,7 @@
       "transcript_analysis": {},
       "frame_analysis_confidence": 0.7,
       "transcript_analysis_confidence": 0,
-      "educational_indicators": [
-        "Quits",
-        "Utkarshani",
-        "Jaimini"
-      ],
+      "educational_indicators": ["Quits", "Utkarshani", "Jaimini"],
       "concept_extraction_method": "visual_first",
       "visual_elements": "Slide content: Me: *Quits going to lecture, >\nonly uses outside resources tf\nand grades go up*\n~ x Jaimini, Utkarsh...",
       "strategic_tier": "unknown",
@@ -825,11 +743,7 @@
       "segment_text": "() You'll get the highest grade () of all the people sitting here. () What? () Like time. () Time? () Okay, how does time factors in here? () Because if you could go into the lecture, () obviously you're doing something else in your time.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -837,11 +751,7 @@
       "transcript_analysis": {},
       "frame_analysis_confidence": 0.7,
       "transcript_analysis_confidence": 0,
-      "educational_indicators": [
-        "Quits",
-        "Utkarshani",
-        "Jaimini"
-      ],
+      "educational_indicators": ["Quits", "Utkarshani", "Jaimini"],
       "concept_extraction_method": "visual_first",
       "visual_elements": "Slide content: Me: *Quits going to lecture, >\nonly uses outside resources tf\nand grades go up*\n~ x Jaimini, Utkarsh...",
       "strategic_tier": "unknown",
@@ -870,11 +780,7 @@
       "segment_text": "() You'll get the highest grade () of all the people sitting here. () What? () Like time. () Time? () Okay, how does time factors in here? () Because if you could go into the lecture, () obviously you're doing something else in your time.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -882,11 +788,7 @@
       "transcript_analysis": {},
       "frame_analysis_confidence": 0.7,
       "transcript_analysis_confidence": 0,
-      "educational_indicators": [
-        "Quits",
-        "Utkarshani",
-        "Jaimini"
-      ],
+      "educational_indicators": ["Quits", "Utkarshani", "Jaimini"],
       "concept_extraction_method": "visual_first",
       "visual_elements": "Slide content: Me: *Quits going to lecture, >\nonly uses outside resources tf\nand grades go up*\n~ x Jaimini, Utkarsh...",
       "strategic_tier": "unknown",
@@ -897,12 +799,7 @@
         "text": "What percentage of successful Mount Everest climbs occurred between 1975 and 2011?",
         "answer": "B",
         "detailed_answer": "This answer is correct because the given data range (1981-1993) is not specified, but the options are based on a specific data range. The correct option B represents the percentage of successful climbs between 1975 and 2011.",
-        "options": [
-          "85%",
-          "92.4%",
-          "95.6%",
-          "100%"
-        ],
+        "options": ["85%", "92.4%", "95.6%", "100%"],
         "type": "mcq",
         "difficulty": "easy",
         "topic": "Number",
@@ -915,11 +812,7 @@
       "segment_text": "() I'm showing you guys the graph, () but I'm withholding some information () which is a very important key that you are overlooking here. () What about this? () So sale of organic food per year increases () and that correlates with the number of people () getting diagnosed with autism. () Not true? () No? () Probably is true.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -964,11 +857,7 @@
       "segment_text": "() I'm showing you guys the graph, () but I'm withholding some information () which is a very important key that you are overlooking here. () What about this? () So sale of organic food per year increases () and that correlates with the number of people () getting diagnosed with autism. () Not true? () No? () Probably is true.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -1013,11 +902,7 @@
       "segment_text": "() I'm showing you guys the graph, () but I'm withholding some information () which is a very important key that you are overlooking here. () What about this? () So sale of organic food per year increases () and that correlates with the number of people () getting diagnosed with autism. () Not true? () No? () Probably is true.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -1062,11 +947,7 @@
       "segment_text": "() You have a question? () It's the same, I think, probably. () And then the researchers said () they had one analysis from both of these studies () that there was a strong link () between the nearsighted parents. () So parents who are nearsighted or shortsighted () are more likely to have kids who are shortsighted.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -1111,11 +992,7 @@
       "segment_text": "() You have a question? () It's the same, I think, probably. () And then the researchers said () they had one analysis from both of these studies () that there was a strong link () between the nearsighted parents. () So parents who are nearsighted or shortsighted () are more likely to have kids who are shortsighted.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -1163,11 +1040,7 @@
       "segment_text": "() You have a question? () It's the same, I think, probably. () And then the researchers said () they had one analysis from both of these studies () that there was a strong link () between the nearsighted parents. () So parents who are nearsighted or shortsighted () are more likely to have kids who are shortsighted.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -1215,11 +1088,7 @@
       "segment_text": "() So how many of you have heard this term before, () correlation is not causation? () When, what was the context? () Today's class is going to be a little bit lecture () I the basics about the concept () and then we'll have a puzzle or a game session. () What do you think about this? () Is this true? () No, why not? () But every time people have, there's data to support this. () You're making this claim based on data () and if you eat chicken, you get a good amount.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -1267,11 +1136,7 @@
       "segment_text": "() So how many of you have heard this term before, () correlation is not causation? () When, what was the context? () Today's class is going to be a little bit lecture () I the basics about the concept () and then we'll have a puzzle or a game session. () What do you think about this? () Is this true? () No, why not? () But every time people have, there's data to support this. () You're making this claim based on data () and if you eat chicken, you get a good amount.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -1319,11 +1184,7 @@
       "segment_text": "() So how many of you have heard this term before, () correlation is not causation? () When, what was the context? () Today's class is going to be a little bit lecture () I the basics about the concept () and then we'll have a puzzle or a game session. () What do you think about this? () Is this true? () No, why not? () But every time people have, there's data to support this. () You're making this claim based on data () and if you eat chicken, you get a good amount.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -1371,11 +1232,7 @@
       "segment_text": "() Okay, so you don't guys, you don't believe this. () What do you think about this? () So another, now I have a graph. () I have a data to support it, () and it says number of people who drown () by falling into a swimming pool () is correlated with number of films Nicolas Cage appears in.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -1421,11 +1278,7 @@
       "segment_text": "() Okay, so you don't guys, you don't believe this. () What do you think about this? () So another, now I have a graph. () I have a data to support it, () and it says number of people who drown () by falling into a swimming pool () is correlated with number of films Nicolas Cage appears in.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -1473,11 +1326,7 @@
       "segment_text": "() Okay, so you don't guys, you don't believe this. () What do you think about this? () So another, now I have a graph. () I have a data to support it, () and it says number of people who drown () by falling into a swimming pool () is correlated with number of films Nicolas Cage appears in.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -1525,11 +1374,7 @@
       "segment_text": "() Those are counterfactuals, which are hypothetical. () It didn't happen, but you are just assuming () like, oh, what if it happened? () You must be paranoid to death. () What if you did not take so long to get up? () I would be on time.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -1577,11 +1422,7 @@
       "segment_text": "() Those are counterfactuals, which are hypothetical. () It didn't happen, but you are just assuming () like, oh, what if it happened? () You must be paranoid to death. () What if you did not take so long to get up? () I would be on time.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -1629,11 +1470,7 @@
       "segment_text": "() Those are counterfactuals, which are hypothetical. () It didn't happen, but you are just assuming () like, oh, what if it happened? () You must be paranoid to death. () What if you did not take so long to get up? () I would be on time.",
       "quality_score": 7.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "agriculture",
-        "environmental science"
-      ],
+      "tags": ["statistics", "agriculture", "environmental science"],
       "cognitive_level": "apply",
       "feedback": "Question is well-structured, but the answer choice 'No significant impact on crop yields' seems too simplistic. Consider adding more nuanced options to reflect the complexity of the relationship between Utkarshani and crop yields.",
       "question_type": "factual",
@@ -1681,11 +1518,7 @@
       "segment_text": "() So another term with causality () is those counterfactual analysis or hypothetical scenarios. () So whenever you wanna look at correlations, () which the graphs that we saw, () you can think about what if the ice cream sale, () they actually did not go up, () would there still be shark attacks? () That's a counterfact, yes, right? () So the ice cream sale is not causing the shark attacks () as soon as you start thinking about the counterfactual () in this scenario, right? () So just because two events or properties are correlated, () it does not mean one causes the other. () So going to the hospital is positively correlated () with dying, but it does not mean () that just because you go to the hospital () that will cause you to die.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -1731,11 +1564,7 @@
       "segment_text": "() So another term with causality () is those counterfactual analysis or hypothetical scenarios. () So whenever you wanna look at correlations, () which the graphs that we saw, () you can think about what if the ice cream sale, () they actually did not go up, () would there still be shark attacks? () That's a counterfact, yes, right? () So the ice cream sale is not causing the shark attacks () as soon as you start thinking about the counterfactual () in this scenario, right? () So just because two events or properties are correlated, () it does not mean one causes the other. () So going to the hospital is positively correlated () with dying, but it does not mean () that just because you go to the hospital () that will cause you to die.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -1781,11 +1610,7 @@
       "segment_text": "() So another term with causality () is those counterfactual analysis or hypothetical scenarios. () So whenever you wanna look at correlations, () which the graphs that we saw, () you can think about what if the ice cream sale, () they actually did not go up, () would there still be shark attacks? () That's a counterfact, yes, right? () So the ice cream sale is not causing the shark attacks () as soon as you start thinking about the counterfactual () in this scenario, right? () So just because two events or properties are correlated, () it does not mean one causes the other. () So going to the hospital is positively correlated () with dying, but it does not mean () that just because you go to the hospital () that will cause you to die.",
       "quality_score": 7.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "analyze",
       "feedback": "Question is well-structured, but the answer choice could be more specific and detailed. Consider adding more context or nuances to the question.",
       "question_type": "factual",
@@ -1831,11 +1656,7 @@
       "segment_text": "() So there is some hidden variable () which we have not seen in the data, () which is leading us to have this correlation. () So basically our belief says X causes Y, () but there might be some variable Z. () So if you remember the case of ice cream sale () and shark attacks, the common variable is the summer. () So summer is causing both the increase in the ice cream sales () and the increase in the shark attacks.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -1881,11 +1702,7 @@
       "segment_text": "() So there is some hidden variable () which we have not seen in the data, () which is leading us to have this correlation. () So basically our belief says X causes Y, () but there might be some variable Z. () So if you remember the case of ice cream sale () and shark attacks, the common variable is the summer. () So summer is causing both the increase in the ice cream sales () and the increase in the shark attacks.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -1931,11 +1748,7 @@
       "segment_text": "() So there is some hidden variable () which we have not seen in the data, () which is leading us to have this correlation. () So basically our belief says X causes Y, () but there might be some variable Z. () So if you remember the case of ice cream sale () and shark attacks, the common variable is the summer. () So summer is causing both the increase in the ice cream sales () and the increase in the shark attacks.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -1981,11 +1794,7 @@
       "segment_text": "() They saw that link. () Is that a true link? () Or there's something missing in this third? () Here's the answer. () So the researchers noticed () that the nearsighted parents () were more likely to use nightlights in their kid's room.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -2033,11 +1842,7 @@
       "segment_text": "() They saw that link. () Is that a true link? () Or there's something missing in this third? () Here's the answer. () So the researchers noticed () that the nearsighted parents () were more likely to use nightlights in their kid's room.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -2085,11 +1890,7 @@
       "segment_text": "() They saw that link. () Is that a true link? () Or there's something missing in this third? () Here's the answer. () So the researchers noticed () that the nearsighted parents () were more likely to use nightlights in their kid's room.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -2137,11 +1938,7 @@
       "segment_text": "() And in the correlation studies, () we cannot manipulate the data, () which basically means we cannot run studies () and say, what if I change this? () How would that affect my XYZ result in future? () So detection lies, () distinction lies in the nature of the relationship. () So correlation versus causation. () So correlation implies association.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -2183,11 +1980,7 @@
       "segment_text": "() And in the correlation studies, () we cannot manipulate the data, () which basically means we cannot run studies () and say, what if I change this? () How would that affect my XYZ result in future? () So detection lies, () distinction lies in the nature of the relationship. () So correlation versus causation. () So correlation implies association.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -2229,11 +2022,7 @@
       "segment_text": "() And in the correlation studies, () we cannot manipulate the data, () which basically means we cannot run studies () and say, what if I change this? () How would that affect my XYZ result in future? () So detection lies, () distinction lies in the nature of the relationship. () So correlation versus causation. () So correlation implies association.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -2275,11 +2064,7 @@
       "segment_text": "() How much chocolate can they eat in Scotland? () Probably none. () Not much. () So where is Scotland? () Yeah, so the highest is Switzerland, () then Germany, or maybe UK, Ireland, Norway.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -2326,11 +2111,7 @@
       "segment_text": "() How much chocolate can they eat in Scotland? () Probably none. () Not much. () So where is Scotland? () Yeah, so the highest is Switzerland, () then Germany, or maybe UK, Ireland, Norway.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -2376,11 +2157,7 @@
       "segment_text": "() How much chocolate can they eat in Scotland? () Probably none. () Not much. () So where is Scotland? () Yeah, so the highest is Switzerland, () then Germany, or maybe UK, Ireland, Norway.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -2428,11 +2205,7 @@
       "segment_text": "() So something or someone that produces an effect, () result or a condition is known as the cause. () The effect is a change that results () when something is done or happens to it. () So can you think of anything about any causation () in day-to-day life? () So human beings are inherently have this causal mentality.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -2462,12 +2235,7 @@
         "text": "What is the term for a change in state or condition that results from an action or event?",
         "answer": "A",
         "detailed_answer": "This answer is correct because it refers to the resulting change or state that occurs as a result of an action or event. This concept is closely related to the idea of causation, where something produces an effect.",
-        "options": [
-          "An effect",
-          "A cause",
-          "A stimulus",
-          "A consequence"
-        ],
+        "options": ["An effect", "A cause", "A stimulus", "A consequence"],
         "type": "mcq",
         "difficulty": "medium",
         "topic": "Effect",
@@ -2480,11 +2248,7 @@
       "segment_text": "() So something or someone that produces an effect, () result or a condition is known as the cause. () The effect is a change that results () when something is done or happens to it. () So can you think of anything about any causation () in day-to-day life? () So human beings are inherently have this causal mentality.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -2529,11 +2293,7 @@
       "segment_text": "() So something or someone that produces an effect, () result or a condition is known as the cause. () The effect is a change that results () when something is done or happens to it. () So can you think of anything about any causation () in day-to-day life? () So human beings are inherently have this causal mentality.",
       "quality_score": 7.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Question is well-structured, but the correct answer (B) could be more explicitly defined. Consider adding a brief explanation or example to support the correct answer.",
       "question_type": "factual",
@@ -2581,11 +2341,7 @@
       "segment_text": "() So group one, what was the group one? () Which was, who was group one? () Okay, so this question is for you. () Discuss with your group whether or not () you think the following correlations () are also causal relations. () So there's a positive correlation between age and income.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -2631,11 +2387,7 @@
       "segment_text": "() So group one, what was the group one? () Which was, who was group one? () Okay, so this question is for you. () Discuss with your group whether or not () you think the following correlations () are also causal relations. () So there's a positive correlation between age and income.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -2681,11 +2433,7 @@
       "segment_text": "() So group one, what was the group one? () Which was, who was group one? () Okay, so this question is for you. () Discuss with your group whether or not () you think the following correlations () are also causal relations. () So there's a positive correlation between age and income.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -2731,11 +2479,7 @@
       "segment_text": "() Then the temperature could cause it. () Then maybe the migration pattern of sharks () coming to the beaches could cause the shark attacks. () So there are like multiple causes for the shark attacks.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -2743,11 +2487,7 @@
       "transcript_analysis": {},
       "frame_analysis_confidence": 0.7,
       "transcript_analysis_confidence": 0,
-      "educational_indicators": [
-        "Utkarshani",
-        "Jaimini",
-        "What"
-      ],
+      "educational_indicators": ["Utkarshani", "Jaimini", "What"],
       "concept_extraction_method": "visual_first",
       "visual_elements": "Slide content: E>.\na\nJaimini, Utkarshani\n* Can you think of any more examples of an oversimplified cause?\n\u00a2 What ot...",
       "strategic_tier": "unknown",
@@ -2773,11 +2513,7 @@
       "segment_text": "() Then the temperature could cause it. () Then maybe the migration pattern of sharks () coming to the beaches could cause the shark attacks. () So there are like multiple causes for the shark attacks.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -2785,11 +2521,7 @@
       "transcript_analysis": {},
       "frame_analysis_confidence": 0.7,
       "transcript_analysis_confidence": 0,
-      "educational_indicators": [
-        "Utkarshani",
-        "Jaimini",
-        "What"
-      ],
+      "educational_indicators": ["Utkarshani", "Jaimini", "What"],
       "concept_extraction_method": "visual_first",
       "visual_elements": "Slide content: E>.\na\nJaimini, Utkarshani\n* Can you think of any more examples of an oversimplified cause?\n\u00a2 What ot...",
       "strategic_tier": "unknown",
@@ -2817,11 +2549,7 @@
       "segment_text": "() Then the temperature could cause it. () Then maybe the migration pattern of sharks () coming to the beaches could cause the shark attacks. () So there are like multiple causes for the shark attacks.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -2829,11 +2557,7 @@
       "transcript_analysis": {},
       "frame_analysis_confidence": 0.7,
       "transcript_analysis_confidence": 0,
-      "educational_indicators": [
-        "Utkarshani",
-        "Jaimini",
-        "What"
-      ],
+      "educational_indicators": ["Utkarshani", "Jaimini", "What"],
       "concept_extraction_method": "visual_first",
       "visual_elements": "Slide content: E>.\na\nJaimini, Utkarshani\n* Can you think of any more examples of an oversimplified cause?\n\u00a2 What ot...",
       "strategic_tier": "unknown",
@@ -2862,11 +2586,7 @@
       "segment_text": "() It can allow us to make these predictions () like food causing the increase in population, () and we can use the existing data. () But some of the disadvantages of just relying on correlation () is that we cannot establish cause and effect relationship. () They are prone to inaccurate reporting.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -2908,11 +2628,7 @@
       "segment_text": "() It can allow us to make these predictions () like food causing the increase in population, () and we can use the existing data. () But some of the disadvantages of just relying on correlation () is that we cannot establish cause and effect relationship. () They are prone to inaccurate reporting.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -2954,11 +2670,7 @@
       "segment_text": "() It can allow us to make these predictions () like food causing the increase in population, () and we can use the existing data. () But some of the disadvantages of just relying on correlation () is that we cannot establish cause and effect relationship. () They are prone to inaccurate reporting.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -2998,11 +2710,7 @@
       "segment_text": "() So this basically means, () so more films Nicolas Cage appears in, () there are more people drowning () or falling in the swimming pool. () Should we just ban him? () Yeah. () Right, so that people can be saved? () Okay.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -3047,11 +2755,7 @@
       "segment_text": "() So this basically means, () so more films Nicolas Cage appears in, () there are more people drowning () or falling in the swimming pool. () Should we just ban him? () Yeah. () Right, so that people can be saved? () Okay.",
       "quality_score": 7.5,
       "difficulty": "hard",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "evaluate",
       "feedback": "Question is well-structured, but lacks a clear connection between Nicolas Cage's film appearances and pool-related drowning rates. The correct answer (B) assumes a moderate positive correlation without providing sufficient evidence or context.",
       "question_type": "factual",
@@ -3096,11 +2800,7 @@
       "segment_text": "() This is an interesting one. () It says, quit going to the lecture, () only use the outside resources, () and that would lead your grades to go up. () No? () Yes? () Okay, so if you quit right now this class, () and then I quiz you later, your grades are gonna go up.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -3142,11 +2842,7 @@
       "segment_text": "() This is an interesting one. () It says, quit going to the lecture, () only use the outside resources, () and that would lead your grades to go up. () No? () Yes? () Okay, so if you quit right now this class, () and then I quiz you later, your grades are gonna go up.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -3188,11 +2884,7 @@
       "segment_text": "() This is an interesting one. () It says, quit going to the lecture, () only use the outside resources, () and that would lead your grades to go up. () No? () Yes? () Okay, so if you quit right now this class, () and then I quiz you later, your grades are gonna go up.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -3232,11 +2924,7 @@
       "segment_text": "() Rather than understanding what are the meaning () of those variables, we take those data () and then put it to some machine learning, some classifier () and try to come up with some stats. () And at times, some weird combination () of those variables would make sense, () just in the case of UFO sighting () and people going to Mount Everest. () It just made sense.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -3244,12 +2932,7 @@
       "transcript_analysis": {},
       "frame_analysis_confidence": 0.7,
       "transcript_analysis_confidence": 0,
-      "educational_indicators": [
-        "Data",
-        "So\nWhy",
-        "correlation",
-        "Instead"
-      ],
+      "educational_indicators": ["Data", "So\nWhy", "correlation", "Instead"],
       "concept_extraction_method": "visual_first",
       "visual_elements": "Slide content: So\nWhy this works 4\nData dredging: a\n\no | have 25,153 variables in my database.\n\u00a9 | compare all thes...",
       "strategic_tier": "unknown",
@@ -3278,11 +2961,7 @@
       "segment_text": "() Rather than understanding what are the meaning () of those variables, we take those data () and then put it to some machine learning, some classifier () and try to come up with some stats. () And at times, some weird combination () of those variables would make sense, () just in the case of UFO sighting () and people going to Mount Everest. () It just made sense.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -3290,12 +2969,7 @@
       "transcript_analysis": {},
       "frame_analysis_confidence": 0.7,
       "transcript_analysis_confidence": 0,
-      "educational_indicators": [
-        "Data",
-        "So\nWhy",
-        "correlation",
-        "Instead"
-      ],
+      "educational_indicators": ["Data", "So\nWhy", "correlation", "Instead"],
       "concept_extraction_method": "visual_first",
       "visual_elements": "Slide content: So\nWhy this works 4\nData dredging: a\n\no | have 25,153 variables in my database.\n\u00a9 | compare all thes...",
       "strategic_tier": "unknown",
@@ -3324,11 +2998,7 @@
       "segment_text": "() Rather than understanding what are the meaning () of those variables, we take those data () and then put it to some machine learning, some classifier () and try to come up with some stats. () And at times, some weird combination () of those variables would make sense, () just in the case of UFO sighting () and people going to Mount Everest. () It just made sense.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -3336,12 +3006,7 @@
       "transcript_analysis": {},
       "frame_analysis_confidence": 0.7,
       "transcript_analysis_confidence": 0,
-      "educational_indicators": [
-        "Data",
-        "So\nWhy",
-        "correlation",
-        "Instead"
-      ],
+      "educational_indicators": ["Data", "So\nWhy", "correlation", "Instead"],
       "concept_extraction_method": "visual_first",
       "visual_elements": "Slide content: So\nWhy this works 4\nData dredging: a\n\no | have 25,153 variables in my database.\n\u00a9 | compare all thes...",
       "strategic_tier": "unknown",
@@ -3370,11 +3035,7 @@
       "segment_text": "() Negative correlation basically mean () if one is increasing, the other is decreasing. () So let's take an example of the ice cream sale () and the shark attack. () The negative correlation would be () the more number of ice creams you eat, () there are less number of shark attacks.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -3382,11 +3043,7 @@
       "transcript_analysis": {},
       "frame_analysis_confidence": 0.7,
       "transcript_analysis_confidence": 0,
-      "educational_indicators": [
-        "Negative",
-        "correlation",
-        "Swann Hosa"
-      ],
+      "educational_indicators": ["Negative", "correlation", "Swann Hosa"],
       "concept_extraction_method": "visual_first",
       "visual_elements": "Slide content: Negative correlation: when a 7 6\nsmall amount of\n120 ET eeu\n\u00a9 one variable is associated no \u201cs\nwith ...",
       "strategic_tier": "unknown",
@@ -3415,11 +3072,7 @@
       "segment_text": "() Negative correlation basically mean () if one is increasing, the other is decreasing. () So let's take an example of the ice cream sale () and the shark attack. () The negative correlation would be () the more number of ice creams you eat, () there are less number of shark attacks.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -3427,11 +3080,7 @@
       "transcript_analysis": {},
       "frame_analysis_confidence": 0.7,
       "transcript_analysis_confidence": 0,
-      "educational_indicators": [
-        "Negative",
-        "correlation",
-        "Swann Hosa"
-      ],
+      "educational_indicators": ["Negative", "correlation", "Swann Hosa"],
       "concept_extraction_method": "visual_first",
       "visual_elements": "Slide content: Negative correlation: when a 7 6\nsmall amount of\n120 ET eeu\n\u00a9 one variable is associated no \u201cs\nwith ...",
       "strategic_tier": "unknown",
@@ -3460,11 +3109,7 @@
       "segment_text": "() Negative correlation basically mean () if one is increasing, the other is decreasing. () So let's take an example of the ice cream sale () and the shark attack. () The negative correlation would be () the more number of ice creams you eat, () there are less number of shark attacks.",
       "quality_score": 7.5,
       "difficulty": "hard",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "analyze",
       "feedback": "Question is well-structured, but the answer option A could be more specific and detailed.",
       "question_type": "factual",
@@ -3472,11 +3117,7 @@
       "transcript_analysis": {},
       "frame_analysis_confidence": 0.7,
       "transcript_analysis_confidence": 0,
-      "educational_indicators": [
-        "Negative",
-        "correlation",
-        "Swann Hosa"
-      ],
+      "educational_indicators": ["Negative", "correlation", "Swann Hosa"],
       "concept_extraction_method": "visual_first",
       "visual_elements": "Slide content: Negative correlation: when a 7 6\nsmall amount of\n120 ET eeu\n\u00a9 one variable is associated no \u201cs\nwith ...",
       "strategic_tier": "unknown",
@@ -3505,11 +3146,7 @@
       "segment_text": "() The positive correlation would be () the more number of ice creams you eat, () there are more shark attacks. () The third is zero correlation, () which basically means there is no association () between any of the variables that you are dealing with. () And correlation, the range for correlation () is minus one to one, () because it covers both the positive zero () and the negative range.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -3517,10 +3154,7 @@
       "transcript_analysis": {},
       "frame_analysis_confidence": 0.7,
       "transcript_analysis_confidence": 0,
-      "educational_indicators": [
-        "Negative",
-        "correlation"
-      ],
+      "educational_indicators": ["Negative", "correlation"],
       "concept_extraction_method": "visual_first",
       "visual_elements": "Slide content: Negative correlation: when a )\nsmall amount of\n420 EOD\n\u00a9 one variable is associated no \u201cs\nwith a lar...",
       "strategic_tier": "unknown",
@@ -3549,11 +3183,7 @@
       "segment_text": "() The positive correlation would be () the more number of ice creams you eat, () there are more shark attacks. () The third is zero correlation, () which basically means there is no association () between any of the variables that you are dealing with. () And correlation, the range for correlation () is minus one to one, () because it covers both the positive zero () and the negative range.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -3561,10 +3191,7 @@
       "transcript_analysis": {},
       "frame_analysis_confidence": 0.7,
       "transcript_analysis_confidence": 0,
-      "educational_indicators": [
-        "Negative",
-        "correlation"
-      ],
+      "educational_indicators": ["Negative", "correlation"],
       "concept_extraction_method": "visual_first",
       "visual_elements": "Slide content: Negative correlation: when a )\nsmall amount of\n420 EOD\n\u00a9 one variable is associated no \u201cs\nwith a lar...",
       "strategic_tier": "unknown",
@@ -3593,11 +3220,7 @@
       "segment_text": "() The positive correlation would be () the more number of ice creams you eat, () there are more shark attacks. () The third is zero correlation, () which basically means there is no association () between any of the variables that you are dealing with. () And correlation, the range for correlation () is minus one to one, () because it covers both the positive zero () and the negative range.",
       "quality_score": 7.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Question is clear, but the answer option 'a negative linear correlation would be most likely observed' does not align with the data provided. The correct answer should reflect a positive correlation between study time and grades.",
       "question_type": "factual",
@@ -3605,10 +3228,7 @@
       "transcript_analysis": {},
       "frame_analysis_confidence": 0.7,
       "transcript_analysis_confidence": 0,
-      "educational_indicators": [
-        "Negative",
-        "correlation"
-      ],
+      "educational_indicators": ["Negative", "correlation"],
       "concept_extraction_method": "visual_first",
       "visual_elements": "Slide content: Negative correlation: when a )\nsmall amount of\n420 EOD\n\u00a9 one variable is associated no \u201cs\nwith a lar...",
       "strategic_tier": "unknown",
@@ -3637,11 +3257,7 @@
       "segment_text": "() So if we say that younger drivers () have high probability of being in accident, () does that mean that age is a cause of accident? () No, is it? () We should stop giving younger kids cars. () Only people above 50 should be able to drive. () Anybody less than 50 should not drive.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -3688,11 +3304,7 @@
       "segment_text": "() So if we say that younger drivers () have high probability of being in accident, () does that mean that age is a cause of accident? () No, is it? () We should stop giving younger kids cars. () Only people above 50 should be able to drive. () Anybody less than 50 should not drive.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -3739,11 +3351,7 @@
       "segment_text": "() So if we say that younger drivers () have high probability of being in accident, () does that mean that age is a cause of accident? () No, is it? () We should stop giving younger kids cars. () Only people above 50 should be able to drive. () Anybody less than 50 should not drive.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -3790,11 +3398,7 @@
       "segment_text": "() Okay, how about this? () If I spend five minutes on this slide, () I stare five minutes on this slide, () that will cause me to not have the awesome puzzles () that I have prepared for you guys. () You won't be able to do those puzzles. () It is causal, right? () Very simple.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -3840,11 +3444,7 @@
       "segment_text": "() Okay, how about this? () If I spend five minutes on this slide, () I stare five minutes on this slide, () that will cause me to not have the awesome puzzles () that I have prepared for you guys. () You won't be able to do those puzzles. () It is causal, right? () Very simple.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -3890,11 +3490,7 @@
       "segment_text": "() Okay, how about this? () If I spend five minutes on this slide, () I stare five minutes on this slide, () that will cause me to not have the awesome puzzles () that I have prepared for you guys. () You won't be able to do those puzzles. () It is causal, right? () Very simple.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -3940,11 +3536,7 @@
       "segment_text": "() That's a strong claim, right? () So there's no causation in there. () The more firefighters at the fire () is positively correlated with the amount of damage () done to the building, but that does not mean () that the firefighters are causing the damage. () I'm gonna skip these.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -3952,10 +3544,7 @@
       "transcript_analysis": {},
       "frame_analysis_confidence": 0.7,
       "transcript_analysis_confidence": 0,
-      "educational_indicators": [
-        "Going",
-        "Just"
-      ],
+      "educational_indicators": ["Going", "Just"],
       "concept_extraction_method": "visual_first",
       "visual_elements": "Slide content: \u00a2 Just because two events or properties are correlated (linked) does not mean that\none causes the ot...",
       "strategic_tier": "unknown",
@@ -3984,11 +3573,7 @@
       "segment_text": "() That's a strong claim, right? () So there's no causation in there. () The more firefighters at the fire () is positively correlated with the amount of damage () done to the building, but that does not mean () that the firefighters are causing the damage. () I'm gonna skip these.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -3996,10 +3581,7 @@
       "transcript_analysis": {},
       "frame_analysis_confidence": 0.7,
       "transcript_analysis_confidence": 0,
-      "educational_indicators": [
-        "Going",
-        "Just"
-      ],
+      "educational_indicators": ["Going", "Just"],
       "concept_extraction_method": "visual_first",
       "visual_elements": "Slide content: \u00a2 Just because two events or properties are correlated (linked) does not mean that\none causes the ot...",
       "strategic_tier": "unknown",
@@ -4028,11 +3610,7 @@
       "segment_text": "() That's a strong claim, right? () So there's no causation in there. () The more firefighters at the fire () is positively correlated with the amount of damage () done to the building, but that does not mean () that the firefighters are causing the damage. () I'm gonna skip these.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -4040,10 +3618,7 @@
       "transcript_analysis": {},
       "frame_analysis_confidence": 0.7,
       "transcript_analysis_confidence": 0,
-      "educational_indicators": [
-        "Going",
-        "Just"
-      ],
+      "educational_indicators": ["Going", "Just"],
       "concept_extraction_method": "visual_first",
       "visual_elements": "Slide content: \u00a2 Just because two events or properties are correlated (linked) does not mean that\none causes the ot...",
       "strategic_tier": "unknown",
@@ -4072,11 +3647,7 @@
       "segment_text": "() That's what correlation is telling us. () Does that mean that age is causing us to get more money? () No, so not causal right there. () The second one is there's a positive correlation () between the house size and the value of the house.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -4084,11 +3655,7 @@
       "transcript_analysis": {},
       "frame_analysis_confidence": 0.7,
       "transcript_analysis_confidence": 0,
-      "educational_indicators": [
-        "correlation",
-        "There",
-        "Aor\nDiscuss"
-      ],
+      "educational_indicators": ["correlation", "There", "Aor\nDiscuss"],
       "concept_extraction_method": "visual_first",
       "visual_elements": "Slide content: Aor\nDiscuss with your group whether or not you think the following correlations are also causal\nrela...",
       "strategic_tier": "unknown",
@@ -4117,11 +3684,7 @@
       "segment_text": "() That's what correlation is telling us. () Does that mean that age is causing us to get more money? () No, so not causal right there. () The second one is there's a positive correlation () between the house size and the value of the house.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -4129,11 +3692,7 @@
       "transcript_analysis": {},
       "frame_analysis_confidence": 0.7,
       "transcript_analysis_confidence": 0,
-      "educational_indicators": [
-        "correlation",
-        "There",
-        "Aor\nDiscuss"
-      ],
+      "educational_indicators": ["correlation", "There", "Aor\nDiscuss"],
       "concept_extraction_method": "visual_first",
       "visual_elements": "Slide content: Aor\nDiscuss with your group whether or not you think the following correlations are also causal\nrela...",
       "strategic_tier": "unknown",
@@ -4162,11 +3721,7 @@
       "segment_text": "() That's what correlation is telling us. () Does that mean that age is causing us to get more money? () No, so not causal right there. () The second one is there's a positive correlation () between the house size and the value of the house.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -4174,11 +3729,7 @@
       "transcript_analysis": {},
       "frame_analysis_confidence": 0.7,
       "transcript_analysis_confidence": 0,
-      "educational_indicators": [
-        "correlation",
-        "There",
-        "Aor\nDiscuss"
-      ],
+      "educational_indicators": ["correlation", "There", "Aor\nDiscuss"],
       "concept_extraction_method": "visual_first",
       "visual_elements": "Slide content: Aor\nDiscuss with your group whether or not you think the following correlations are also causal\nrela...",
       "strategic_tier": "unknown",
@@ -4207,11 +3758,7 @@
       "segment_text": "() Some of the examples could be that Bob notices () every time he has a temperature, he does not feel well. () And the reason he gives is () because he has a high body temperature () that is actually causing him to not feel well. () Then Bob jumps into the ice bath, () concluding that if he lowers his body temperature, () he's gonna feel better.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -4255,11 +3802,7 @@
       "segment_text": "() Some of the examples could be that Bob notices () every time he has a temperature, he does not feel well. () And the reason he gives is () because he has a high body temperature () that is actually causing him to not feel well. () Then Bob jumps into the ice bath, () concluding that if he lowers his body temperature, () he's gonna feel better.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -4303,10 +3846,7 @@
       "segment_text": "() Some of the examples could be that Bob notices () every time he has a temperature, he does not feel well. () And the reason he gives is () because he has a high body temperature () that is actually causing him to not feel well. () Then Bob jumps into the ice bath, () concluding that if he lowers his body temperature, () he's gonna feel better.",
       "quality_score": 7.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "research_methods"
-      ],
+      "tags": ["statistics", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Question is well-structured, but the answer choice could be more specific and detailed.",
       "question_type": "factual",
@@ -4350,11 +3890,7 @@
       "segment_text": "() So Nature Magazine on a journal, it's a scientific journal. () So if you ever wanna go online, look for nature, () you're gonna get a lot of scientific articles () and papers in that journal or magazine. () So in that magazine, this study was published, () which said that babies younger than two years old () who slept with the light on, () were at increased risk of developing myopia, () which is nearsightedness or shortsightedness () later in the childhood.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -4402,11 +3938,7 @@
       "segment_text": "() So Nature Magazine on a journal, it's a scientific journal. () So if you ever wanna go online, look for nature, () you're gonna get a lot of scientific articles () and papers in that journal or magazine. () So in that magazine, this study was published, () which said that babies younger than two years old () who slept with the light on, () were at increased risk of developing myopia, () which is nearsightedness or shortsightedness () later in the childhood.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -4452,11 +3984,7 @@
       "segment_text": "() So Nature Magazine on a journal, it's a scientific journal. () So if you ever wanna go online, look for nature, () you're gonna get a lot of scientific articles () and papers in that journal or magazine. () So in that magazine, this study was published, () which said that babies younger than two years old () who slept with the light on, () were at increased risk of developing myopia, () which is nearsightedness or shortsightedness () later in the childhood.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -4504,11 +4032,7 @@
       "segment_text": "() So what the researchers did find, however, () was a strong link between nearsighted parents () and nearsighted children. () Is this true? () There's something wrong with this. () So the third point.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -4556,11 +4080,7 @@
       "segment_text": "() So what the researchers did find, however, () was a strong link between nearsighted parents () and nearsighted children. () Is this true? () There's something wrong with this. () So the third point.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -4608,11 +4128,7 @@
       "segment_text": "() So what the researchers did find, however, () was a strong link between nearsighted parents () and nearsighted children. () Is this true? () There's something wrong with this. () So the third point.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -4660,11 +4176,7 @@
       "segment_text": "() So this policy occurs more often in media. () So there'll be multiple causes of something () that you're watching on TikTok or Instagram reel () or some posts that you're scrolling. () And you only get to see or read or hear () one side of the story.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -4709,11 +4221,7 @@
       "segment_text": "() So this policy occurs more often in media. () So there'll be multiple causes of something () that you're watching on TikTok or Instagram reel () or some posts that you're scrolling. () And you only get to see or read or hear () one side of the story.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "apply",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
@@ -4758,11 +4266,7 @@
       "segment_text": "() So this policy occurs more often in media. () So there'll be multiple causes of something () that you're watching on TikTok or Instagram reel () or some posts that you're scrolling. () And you only get to see or read or hear () one side of the story.",
       "quality_score": 8.5,
       "difficulty": "medium",
-      "tags": [
-        "statistics",
-        "correlation",
-        "research_methods"
-      ],
+      "tags": ["statistics", "correlation", "research_methods"],
       "cognitive_level": "evaluate",
       "feedback": "Well-structured question with clear educational purpose",
       "question_type": "factual",
