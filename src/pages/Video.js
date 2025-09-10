@@ -15,6 +15,7 @@ function Video() {
   const [videoHeight, setVideoHeight] = useState(360);
   const [triggered, setTriggered] = useState(new Set());
   const [playQuestion, setPlayQuestion] = useState(null);
+  const [questionDifficulty, setQuestionDifficulty] = useState("easy");
   const { videoFileName, questions, currentLesson, summary } = useLearningAppFascade();
   const questionsChecked = questions || [];
   const timestamps = questionsChecked.map((question) =>
@@ -101,7 +102,8 @@ function Video() {
       {playQuestion ? (
         <QuestionCard
           question={playQuestion}
-          scrambledQuestionOptions={[...playQuestion.getQuestionAnswers()].sort(
+          difficulty={questionDifficulty}
+          scrambledQuestionOptions={[...playQuestion.getDifficulty(questionDifficulty).getQuestionOptions()].sort(
             () => Math.random() - 0.5
           )}
           togglePlay={togglePlay}

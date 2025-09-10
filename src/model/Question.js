@@ -1,51 +1,70 @@
+import { DifficultyQuestion } from "./DifficultyQuestion";
+
 export class Question {
-    #question;
-    #questionAnswers;
-    #timeStamp;
-    #userGotAnswerCorrect;
-    #userAnswered;
+  #timeStamp;
+  #userGotAnswerCorrect;
+  #userAnswered;
+  #allDifficultyQuestions;
 
-    constructor(question, questionAnswers, timeStamp) {
-        this.#question = question;
-        this.#questionAnswers = questionAnswers;
-        this.#timeStamp = timeStamp;
-        this.#userGotAnswerCorrect = false;
-        this.#userAnswered = false;
-    }
+  constructor(timeStamp) {
+    this.#timeStamp = timeStamp;
+    this.#userGotAnswerCorrect = false;
+    this.#userAnswered = false;
+    this.#allDifficultyQuestions = [];
+  }
 
-    getQuestion() {
-        return this.#question;
-    }
+  addDifficulty(
+    question,
+    questionOptions,
+    questionCorrectAnswer,
+    questionDetailedCorrectAnswer,
+    difficulty,
+    tags
+  ) {
+    this.#allDifficultyQuestions.forEach((difficultyQuestion) => {
+      if (difficultyQuestion.getDifficulty === difficulty) {
+        return;
+      }
+    });
+    this.#allDifficultyQuestions.push(
+      new DifficultyQuestion(
+        question,
+        questionOptions,
+        questionCorrectAnswer,
+        questionDetailedCorrectAnswer,
+        difficulty,
+        tags
+      )
+    );
+  }
 
-    getQuestionAnswers() {
-        return this.#questionAnswers;
-    }
+  getDifficulty(difficulty) {
+    return this.#allDifficultyQuestions.find(
+      (difficultyQuestion) => difficultyQuestion.getDifficulty() === difficulty
+    );
+  }
 
-    getTimeStamp() {
-        return this.#timeStamp;
-    }
+  getTimeStamp() {
+    return this.#timeStamp;
+  }
 
-    getCorrectAnswer() {
+  getCorrectAnswer() {}
 
-    }
+  isAnswerCorrect(answer) {}
 
-    isAnswerCorrect(answer) {
-        
-    }
+  setUserGotAnswerCorrect(userGotAnswerCorrect) {
+    this.#userGotAnswerCorrect = userGotAnswerCorrect;
+  }
 
-    setUserGotAnswerCorrect(userGotAnswerCorrect) {
-        this.#userGotAnswerCorrect = userGotAnswerCorrect;
-    }
+  getUserGotAnswerCorrect() {
+    return this.#userGotAnswerCorrect;
+  }
 
-    getUserGotAnswerCorrect() {
-        return this.#userGotAnswerCorrect;
-    }
+  setUserAnswered(userAnswered) {
+    this.#userAnswered = userAnswered;
+  }
 
-    setUserAnswered(userAnswered) {
-        this.#userAnswered = userAnswered;
-    }
-
-    getUserAnswered() {
-        return this.#userAnswered;
-    }
+  getUserAnswered() {
+    return this.#userAnswered;
+  }
 }

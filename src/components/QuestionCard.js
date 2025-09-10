@@ -10,7 +10,7 @@ function QuestionCard(props) {
   const answerQuestion = () => {
     setSubmitClicked(true);
     props.question.setUserAnswered(true);
-    if (selectedAnswer == null || selectedAnswer !== props.question.getQuestionAnswers()[0]) {
+    if (selectedAnswer == null || selectedAnswer !== props.question.getDifficulty(props.difficulty).getQuestionOptions()[0]) {
       return;
     }
     setCorrectClicked(true);
@@ -21,7 +21,7 @@ function QuestionCard(props) {
     <div className={videoContainerStyles.videoContainer}>
       {!submitClicked ? (
         <div className={questionStyles.questionContainer}>
-          <p className={questionStyles.questionContainerTitle}>{props.question.getQuestion()}</p>
+          <p className={questionStyles.questionContainerTitle}>{props.question.getDifficulty(props.difficulty).getQuestion()}</p>
           <div className={questionStyles.questionOptions}>
             {props.scrambledQuestionOptions.map((questionAnswer) => 
             questionAnswer!==selectedAnswer ? (
@@ -37,7 +37,7 @@ function QuestionCard(props) {
         correctClicked ? (
           <div className={questionStyles.questionContainer}>
             <p className={questionStyles.questionContainerTitle}>Correct!</p>
-            <p>Here's why: </p>
+            <p>{props.question.getDifficulty(props.difficulty).getDetailedCorrectAnswer()}</p>
             <button onClick={props.togglePlay}>{"\u25B6"}</button>
           </div>
         ) : (
