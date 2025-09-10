@@ -11,6 +11,8 @@ function Video() {
   const videoRef = useRef(null);
   const [videoPlaying, setVideoPlaying] = useState(false);
   const [videoIsEnded, setVideoIsEnded] = useState(false);
+  const [videoWidth, setVideoWidth] = useState(640);
+  const [videoHeight, setVideoHeight] = useState(360);
   const [triggered, setTriggered] = useState(new Set());
   const [playQuestion, setPlayQuestion] = useState(null);
   const { videoFileName, questions, currentLesson, summary } = useLearningAppFascade();
@@ -39,6 +41,11 @@ function Video() {
 
   const videoEnded = () => {
     setVideoIsEnded(true);
+  }
+
+  const fullScreen = () => {
+    setVideoWidth(1280);
+    setVideoHeight(720);
   }
 
   useEffect(() => {
@@ -76,7 +83,7 @@ function Video() {
             Chatbot
           </button>
         </div>
-        <SummaryScreen totalCorrect={summary[0]} totalAnswered={summary[1]}/>
+        <SummaryScreen totalCorrect={summary[0]} totalAnswered={summary[1]} />
       </div>
     );
   }
@@ -107,13 +114,14 @@ function Video() {
         className={videoContainerStyles.videoContainer}
         style={{ display: playQuestion ? "none" : "flex" }}
       >
-        <video ref={videoRef} width="640" height="360" key={videoFileName} onEnded={videoEnded}>
+        <video ref={videoRef} width={videoWidth} height={videoHeight} key={videoFileName} onEnded={videoEnded}>
           <source src={videoFileName} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <button onClick={togglePlay}>
           {videoPlaying ? "\u23F8" : "\u25B6"}
         </button>
+        <button onClick={fullScreen}></button>
       </div>
     </div>
   );
