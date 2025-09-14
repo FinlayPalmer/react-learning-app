@@ -1,56 +1,77 @@
-import { HybridPALAlgorithm } from "../model/hybrid_adaptive_learning";
+import { HybridPALAlgorithm } from "./HybridPALAlgorithm";
 import { useState } from "react";
 import { useLearningAppFascade } from "../useSingleton/useLearningAppFascade";
 
-function HybridLearner() {
-  // --- Step 1: Define the initial state of the learner ---
-  // This object holds all the information about the learner's progress.
-  let initialGameState = {
-    skillScore: 50,
-    streak: 0,
-    bestStreak: 0,
-    lastDifficulty: "Easy",
-    currentQuestionIndex: 0,
-    showingQuestion: false,
-    finished: false,
-    selectedOption: null,
-    currentQuestion: null,
-    currentDifficulty: null,
-    selectedLessonIndex: 0,
+export class HybridLearner {
+  static #hybridLearner;
+  #listeners = [];
 
-    // Enhanced personalization data
-    learnerProfile: {
-      responseTime: [], // Track how long user takes to answer
-      difficultyHistory: [], // Track difficulty of last N questions
-      accuracyByDifficulty: { Easy: [], Medium: [], Hard: [] }, // Track accuracy per difficulty
-      consecutiveCorrect: 0,
-      consecutiveWrong: 0,
-      preferredDifficulty: null, // Learned preference
-      adaptationRate: 0.5, // How quickly to adapt (0-1)
-      confidenceLevel: 0.5, // Confidence in current skill assessment
-      learningVelocity: 0, // Rate of improvement/decline
-      sessionStartTime: Date.now(),
-      questionStartTime: null,
-    },
-  };
+  constructor() {
+    let initialGameState = {
+      skillScore: 50,
+      streak: 0,
+      bestStreak: 0,
+      lastDifficulty: "Easy",
+      currentQuestionIndex: 0,
+      showingQuestion: false,
+      finished: false,
+      selectedOption: null,
+      currentQuestion: null,
+      currentDifficulty: null,
+      selectedLessonIndex: 0,
 
-  const [gameState, setGameState] = useState(initialGameState);
-  const { questions } = useLearningAppFascade();
+      // Enhanced personalization data
+      learnerProfile: {
+        responseTime: [], // Track how long user takes to answer
+        difficultyHistory: [], // Track difficulty of last N questions
+        accuracyByDifficulty: { Easy: [], Medium: [], Hard: [] }, // Track accuracy per difficulty
+        consecutiveCorrect: 0,
+        consecutiveWrong: 0,
+        preferredDifficulty: null, // Learned preference
+        adaptationRate: 0.5, // How quickly to adapt (0-1)
+        confidenceLevel: 0.5, // Confidence in current skill assessment
+        learningVelocity: 0, // Rate of improvement/decline
+        sessionStartTime: Date.now(),
+        questionStartTime: null,
+      },
+    };
+    const [gameState, setGameState] = useState(initialGameState);
+    const { questions } = useLearningAppFascade();
+    this.#listeners = [];
 
-  // The algorithm is already initialized as window.PALHybridAlgorithm
-  const learner = HybridPALAlgorithm.getInstance();
-  learner.reset(); // Start with a fresh state
-  const firstDifficulty = learner.getNextDifficulty({ state: gameState });
-  console.log(firstDifficulty);
+    const learner = HybridPALAlgorithm.getInstance();
+    learner.reset(); // Start with a fresh state
+    const firstDifficulty = learner.getNextDifficulty({ state: gameState });
+    console.log(firstDifficulty);
+  }
 
-  function handleAnswer(correct) {
+  static getInstance() {
+    if (!this.#hybridLearner) {
+      this.#hybridLearner = new LearningAppFascade();
+    }
+    return this.#hybridLearner;
+  }
+
+  subscribe(listener) {
+    this.#listeners.push(listener);
+  }
+
+  unsubscribe(listener) {
+    this.#listeners = this.#listeners.filter((l) => l !== listener);
+  }
+
+  notify() {
+    this.#listeners.forEach((fn) => fn());
+  }
+
+  handleAnswer(correct) {
     setGameState((prev) => {
       const updated = updateScore(prev, correct, prev.currentDifficulty);
       return { ...updated };
     });
   }
 
-  function updateScore(correct, difficulty) {
+  updateScore(correct, difficulty) {
     const profile = gameState.learnerProfile;
     const responseTime = Date.now() - profile.questionStartTime;
 
@@ -182,7 +203,7 @@ function HybridLearner() {
     }
   }
 
-  function getQuestionDifficulty(score, streak, lastDiff) {
+  getQuestionDifficulty(score, streak, lastDiff) {
     const profile = gameState.learnerProfile;
 
     // Base probabilities based on skill score
@@ -286,7 +307,7 @@ function HybridLearner() {
     return "Easy";
   }
 
-  function updateConfidenceLevel(profile) {
+  updateConfidenceLevel(profile) {
     if (profile.difficultyHistory.length < 3) return;
 
     const recent = profile.difficultyHistory.slice(-5);
@@ -304,7 +325,7 @@ function HybridLearner() {
     profile.confidenceLevel = (accuracyConfidence + timingConfidence) / 2;
   }
 
-  function updateAdaptationRate(profile) {
+  updateAdaptationRate(profile) {
     // Faster adaptation for consistent performers, slower for inconsistent
     const consistency = profile.confidenceLevel;
     const sessionProgress = Math.min(1, profile.difficultyHistory.length / 10);
@@ -312,7 +333,7 @@ function HybridLearner() {
     profile.adaptationRate = 0.3 + consistency * sessionProgress * 0.4;
   }
 
-  function calculateAccuracy(results) {
+  calculateAccuracy(results) {
     if (results.length === 0) return 0.5;
     return (
       results.reduce((sum, correct) => sum + (correct ? 1 : 0), 0) /
@@ -320,7 +341,7 @@ function HybridLearner() {
     );
   }
 
-  function calculateBaseProbabilities(score) {
+  calculateBaseProbabilities(score) {
     if (score <= 20) {
       return { Easy: 0.85, Medium: 0.12, Hard: 0.03 };
     } else if (score <= 35) {
@@ -338,7 +359,7 @@ function HybridLearner() {
     }
   }
 
-  function adjustForRecentPerformance(probs, profile) {
+  adjustForRecentPerformance(probs, profile) {
     const recentHistory = profile.difficultyHistory.slice(-4); // Look at last 4 instead of 3
     if (recentHistory.length === 0) return probs;
 
@@ -384,7 +405,7 @@ function HybridLearner() {
     return probs;
   }
 
-  function adjustForResponseTime(probs, profile) {
+  adjustForResponseTime(probs, profile) {
     if (profile.responseTime.length < 2) return probs;
 
     const avgResponseTime =
@@ -407,7 +428,7 @@ function HybridLearner() {
     return probs;
   }
 
-  function adjustForAccuracyPatterns(probs, profile) {
+  adjustForAccuracyPatterns(probs, profile) {
     const easyAccuracy = calculateAccuracy(profile.accuracyByDifficulty.Easy);
     const mediumAccuracy = calculateAccuracy(
       profile.accuracyByDifficulty.Medium
@@ -490,7 +511,7 @@ function HybridLearner() {
     return probs;
   }
 
-  function adjustForStreakMomentum(probs, streak, lastDiff) {
+  adjustForStreakMomentum(probs, streak, lastDiff) {
     // ENHANCED BUFFER SYSTEM FOR STREAKS
 
     // Positive momentum: Build up gradually
@@ -583,7 +604,7 @@ function HybridLearner() {
     return probs;
   }
 
-  function adjustForLearningVelocity(probs, profile) {
+  adjustForLearningVelocity(probs, profile) {
     // If improving rapidly, challenge more
     if (profile.learningVelocity > 0.3) {
       probs.Hard *= 1.2;
@@ -598,7 +619,7 @@ function HybridLearner() {
     return probs;
   }
 
-  function adjustForConfidence(probs, profile) {
+  adjustForConfidence(probs, profile) {
     // Low confidence - be more conservative
     if (profile.confidenceLevel < 0.3) {
       probs.Easy *= 1.1;
@@ -613,7 +634,7 @@ function HybridLearner() {
     return probs;
   }
 
-  function applySmoothingBuffer(probs, profile) {
+  applySmoothingBuffer(probs, profile) {
     // Prevent dramatic difficulty jumps by comparing to recent difficulty distribution
     if (profile.difficultyHistory.length < 3) return probs;
 
@@ -656,7 +677,7 @@ function HybridLearner() {
     return probs;
   }
 
-  function calculateVariance(values) {
+  calculateVariance(values) {
     if (values.length < 2) return 0;
     const mean = values.reduce((a, b) => a + b, 0) / values.length;
     return (
@@ -664,8 +685,4 @@ function HybridLearner() {
       values.length
     );
   }
-
-  return null;
 }
-
-export default HybridLearner;

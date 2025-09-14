@@ -10,43 +10,61 @@ function QuestionCard(props) {
   const answerQuestion = () => {
     setSubmitClicked(true);
     props.question.setUserAnswered(true);
-    if (selectedAnswer == null || selectedAnswer !== props.question.getDifficulty(props.difficulty).getQuestionOptions()[0]) {
+    if (
+      selectedAnswer == null ||
+      selectedAnswer !==
+        props.question.getDifficulty(props.difficulty).getQuestionOptions()[0]
+    ) {
       return;
     }
     setCorrectClicked(true);
     props.question.setUserGotAnswerCorrect(true);
-  }
+  };
 
   return (
     <div className={videoContainerStyles.videoContainer}>
       {!submitClicked ? (
         <div className={questionStyles.questionContainer}>
-          <p className={questionStyles.questionContainerTitle}>{props.question.getDifficulty(props.difficulty).getQuestion()}</p>
+          <p className={questionStyles.questionContainerTitle}>
+            {props.question.getDifficulty(props.difficulty).getQuestion()}
+          </p>
           <div className={questionStyles.questionOptions}>
-            {props.scrambledQuestionOptions.map((questionAnswer) => 
-            questionAnswer!==selectedAnswer ? (
-              <p className={questionStyles.questionOption} onClick={() => setSelectedAnswer(questionAnswer)} >{questionAnswer}</p>
-            ) : (
-              <p className={questionStyles.questionOptionHighlighted} onClick={() => setSelectedAnswer(questionAnswer)} >{questionAnswer}</p>
-          )
-          )}
+            {props.scrambledQuestionOptions.map((questionAnswer) =>
+              questionAnswer !== selectedAnswer ? (
+                <p
+                  className={questionStyles.questionOption}
+                  onClick={() => setSelectedAnswer(questionAnswer)}
+                >
+                  {questionAnswer}
+                </p>
+              ) : (
+                <p
+                  className={questionStyles.questionOptionHighlighted}
+                  onClick={() => setSelectedAnswer(questionAnswer)}
+                >
+                  {questionAnswer}
+                </p>
+              )
+            )}
           </div>
           <button onClick={answerQuestion}>{"\u21B5"}</button>
         </div>
+      ) : correctClicked ? (
+        <div className={questionStyles.questionContainer}>
+          <p className={questionStyles.questionContainerTitle}>Correct!</p>
+          <p>
+            {props.question
+              .getDifficulty(props.difficulty)
+              .getDetailedCorrectAnswer()}
+          </p>
+          <button onClick={props.togglePlay}>{"\u25B6"}</button>
+        </div>
       ) : (
-        correctClicked ? (
-          <div className={questionStyles.questionContainer}>
-            <p className={questionStyles.questionContainerTitle}>Correct!</p>
-            <p>{props.question.getDifficulty(props.difficulty).getDetailedCorrectAnswer()}</p>
-            <button onClick={props.togglePlay}>{"\u25B6"}</button>
-          </div>
-        ) : (
-          <div className={questionStyles.questionContainer}>
-            <p className={questionStyles.questionContainerTitle}>Incorrect!</p>
-            <button>Let's figure out why</button>
-            <button onClick={props.togglePlay}>{"\u25B6"}</button>
-          </div>
-        )
+        <div className={questionStyles.questionContainer}>
+          <p className={questionStyles.questionContainerTitle}>Incorrect!</p>
+          <button>Let's figure out why</button>
+          <button onClick={props.togglePlay}>{"\u25B6"}</button>
+        </div>
       )}
     </div>
   );

@@ -5,7 +5,7 @@ import sidebarStyles from "../stylesheets/sidebar.module.css";
 import videoContainerStyles from "../stylesheets/videoContainer.module.css";
 import QuestionCard from "../components/QuestionCard";
 import SummaryScreen from "../components/SummaryScreen";
-import HybridLearner from "../components/HybridLearner";
+import HybridLearner from "../model/HybridLearner";
 
 function Video() {
   const navigate = useNavigate();
@@ -100,7 +100,7 @@ function Video() {
 
   return (
     <div className={sidebarStyles.body}>
-      <HybridLearner/>
+      <HybridLearner />
       <div className={sidebarStyles.sidebar}>
         <button name="home_button" type="button" onClick={MoveToMainScreen}>
           Home
