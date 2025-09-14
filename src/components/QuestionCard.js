@@ -10,13 +10,14 @@ function QuestionCard(props) {
   const answerQuestion = () => {
     setSubmitClicked(true);
     props.question.setUserAnswered(true);
-    if (
-      selectedAnswer == null ||
-      selectedAnswer !==
-        props.question.getDifficulty(props.difficulty).getQuestionOptions()[0]
-    ) {
+    if (selectedAnswer == null) {
       return;
     }
+    if (selectedAnswer !== props.question.getDifficulty(props.difficulty).getQuestionOptions()[0]) {
+      props.handleAnswer(false);
+      return;
+    }
+    props.handleAnswer(true);
     setCorrectClicked(true);
     props.question.setUserGotAnswerCorrect(true);
   };

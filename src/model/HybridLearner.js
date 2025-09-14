@@ -1,13 +1,13 @@
 import { HybridPALAlgorithm } from "./HybridPALAlgorithm";
-import { useState } from "react";
-import { useLearningAppFascade } from "../useSingleton/useLearningAppFascade";
 
 export class HybridLearner {
   static #hybridLearner;
   #listeners = [];
+  #gameState;
+  #learner;
 
   constructor() {
-    let initialGameState = {
+    this.#gameState = {
       skillScore: 50,
       streak: 0,
       bestStreak: 0,
@@ -35,19 +35,17 @@ export class HybridLearner {
         questionStartTime: null,
       },
     };
-    const [gameState, setGameState] = useState(initialGameState);
-    const { questions } = useLearningAppFascade();
     this.#listeners = [];
 
-    const learner = HybridPALAlgorithm.getInstance();
-    learner.reset(); // Start with a fresh state
-    const firstDifficulty = learner.getNextDifficulty({ state: gameState });
+    this.#learner = HybridPALAlgorithm.getInstance();
+    this.#learner.reset(); // Start with a fresh state
+    const firstDifficulty = this.#learner.getNextDifficulty({ state: this.#gameState });
     console.log(firstDifficulty);
   }
 
   static getInstance() {
     if (!this.#hybridLearner) {
-      this.#hybridLearner = new LearningAppFascade();
+      this.#hybridLearner = new HybridLearner();
     }
     return this.#hybridLearner;
   }
@@ -64,36 +62,45 @@ export class HybridLearner {
     this.#listeners.forEach((fn) => fn());
   }
 
+  getNextDifficulty() {
+    const nextDifficulty = this.#learner.getQuestionDifficulty(
+      this.#learner.#gameState.skillScore,
+      this.#learner.#gameState.streak,
+      this.#learner.#gameState.lastDifficulty
+    );
+    this.notify();
+    return nextDifficulty;
+  }
+
   handleAnswer(correct) {
-    setGameState((prev) => {
-      const updated = updateScore(prev, correct, prev.currentDifficulty);
-      return { ...updated };
-    });
+    const updated = this.updateScore(this.#gameState, correct, this.#gameState.currentDifficulty);
+    this.notify();
+    this.#gameState = { ...updated };
   }
 
   updateScore(correct, difficulty) {
-    const profile = gameState.learnerProfile;
+    const profile = this.#gameState.learnerProfile;
     const responseTime = Date.now() - profile.questionStartTime;
 
     // Update basic score and streak
-    const oldScore = gameState.skillScore;
+    const oldScore = this.#gameState.skillScore;
     if (correct) {
       const increment = { Easy: 2, Medium: 5, Hard: 8 }[difficulty];
-      gameState.skillScore += increment;
-      gameState.streak += 1;
-      gameState.bestStreak = Math.max(gameState.bestStreak, gameState.streak);
+      this.#gameState.skillScore += increment;
+      this.#gameState.streak += 1;
+      this.#gameState.bestStreak = Math.max(this.#gameState.bestStreak, this.#gameState.streak);
       profile.consecutiveCorrect += 1;
       profile.consecutiveWrong = 0;
     } else {
       const decrement = { Easy: 2, Medium: 4, Hard: 6 }[difficulty];
-      gameState.skillScore -= decrement;
-      gameState.streak = 0;
+      this.#gameState.skillScore -= decrement;
+      this.#gameState.streak = 0;
       profile.consecutiveWrong += 1;
       profile.consecutiveCorrect = 0;
     }
 
-    gameState.skillScore = Math.max(0, Math.min(gameState.skillScore, 100));
-    gameState.lastDifficulty = difficulty;
+    this.#gameState.skillScore = Math.max(0, Math.min(this.#gameState.skillScore, 100));
+    this.#gameState.lastDifficulty = difficulty;
 
     // Update personalization data
     profile.responseTime.push(responseTime);
@@ -106,13 +113,13 @@ export class HybridLearner {
       difficulty: difficulty,
       correct: correct,
       responseTime: responseTime,
-      scoreChange: gameState.skillScore - oldScore,
-      questionText: gameState.currentQuestion
-        ? gameState.currentQuestion.q
+      scoreChange: this.#gameState.skillScore - oldScore,
+      questionText: this.#gameState.currentQuestion
+        ? this.#gameState.currentQuestion.q
         : null,
-      selectedOption: gameState.selectedOption,
-      correctAnswer: gameState.currentQuestion
-        ? gameState.currentQuestion.answer
+      selectedOption: this.#gameState.selectedOption,
+      correctAnswer: this.#gameState.currentQuestion
+        ? this.#gameState.currentQuestion.answer
         : null,
     });
     if (profile.difficultyHistory.length > 15) {
@@ -133,10 +140,10 @@ export class HybridLearner {
     }
 
     // Update confidence level based on recent performance stability
-    updateConfidenceLevel(profile);
+    this.updateConfidenceLevel(profile);
 
     // Adapt the adaptation rate based on performance patterns
-    updateAdaptationRate(profile);
+    this.updateAdaptationRate(profile);
 
     // Log personalization insights
     console.log("Learner Profile Update:", {
@@ -145,13 +152,13 @@ export class HybridLearner {
       responseTime: responseTime,
       learningVelocity: profile.learningVelocity.toFixed(3),
       confidenceLevel: profile.confidenceLevel.toFixed(3),
-      easyAccuracy: calculateAccuracy(
+      easyAccuracy: this.calculateAccuracy(
         profile.accuracyByDifficulty.Easy
       ).toFixed(2),
-      mediumAccuracy: calculateAccuracy(
+      mediumAccuracy: this.calculateAccuracy(
         profile.accuracyByDifficulty.Medium
       ).toFixed(2),
-      hardAccuracy: calculateAccuracy(
+      hardAccuracy: this.calculateAccuracy(
         profile.accuracyByDifficulty.Hard
       ).toFixed(2),
     });
@@ -164,7 +171,7 @@ export class HybridLearner {
     ) {
       try {
         window.PALHybridAlgorithm.updateProfileAfterAnswer(
-          gameState,
+          this.#gameState,
           correct,
           difficulty,
           responseTime
@@ -178,7 +185,7 @@ export class HybridLearner {
     ) {
       try {
         window.PALRLAlgorithm.updateProfileAfterAnswer(
-          gameState,
+          this.#gameState,
           correct,
           difficulty,
           responseTime
@@ -192,7 +199,7 @@ export class HybridLearner {
     ) {
       try {
         window.PALAlgorithm.updateProfileAfterAnswer(
-          gameState,
+          this.#gameState,
           correct,
           difficulty,
           responseTime
@@ -204,31 +211,31 @@ export class HybridLearner {
   }
 
   getQuestionDifficulty(score, streak, lastDiff) {
-    const profile = gameState.learnerProfile;
+    const profile = this.#gameState.learnerProfile;
 
     // Base probabilities based on skill score
-    let probs = calculateBaseProbabilities(score);
+    let probs = this.calculateBaseProbabilities(score);
 
     // Adjust based on recent performance
-    probs = adjustForRecentPerformance(probs, profile);
+    probs = this.adjustForRecentPerformance(probs, profile);
 
     // Adjust based on response time patterns
-    probs = adjustForResponseTime(probs, profile);
+    probs = this.adjustForResponseTime(probs, profile);
 
     // Adjust based on accuracy patterns
-    probs = adjustForAccuracyPatterns(probs, profile);
+    probs = this.adjustForAccuracyPatterns(probs, profile);
 
     // Adjust based on streak and momentum
-    probs = adjustForStreakMomentum(probs, streak, lastDiff);
+    probs = this.adjustForStreakMomentum(probs, streak, lastDiff);
 
     // Adjust for learning velocity (improvement/decline trend)
-    probs = adjustForLearningVelocity(probs, profile);
+    probs = this.adjustForLearningVelocity(probs, profile);
 
     // Apply confidence-based fine-tuning
-    probs = adjustForConfidence(probs, profile);
+    probs = this.adjustForConfidence(probs, profile);
 
     // STABILITY SYSTEM: Prevent wild difficulty swings
-    probs = applySmoothingBuffer(probs, profile);
+    probs = this.applySmoothingBuffer(probs, profile);
 
     // Ensure probabilities sum to 1
     const total = probs.Easy + probs.Medium + probs.Hard;
@@ -246,12 +253,12 @@ export class HybridLearner {
       recentAccuracy:
         profile.difficultyHistory.length > 0
           ? `${(
-              (profile.difficultyHistory
-                .slice(-3)
-                .reduce((sum, item) => sum + (item.correct ? 1 : 0), 0) /
-                Math.min(3, profile.difficultyHistory.length)) *
-              100
-            ).toFixed(0)}%`
+            (profile.difficultyHistory
+              .slice(-3)
+              .reduce((sum, item) => sum + (item.correct ? 1 : 0), 0) /
+              Math.min(3, profile.difficultyHistory.length)) *
+            100
+          ).toFixed(0)}%`
           : "N/A",
       confidence: `${(profile.confidenceLevel * 100).toFixed(0)}%`,
       learningVelocity: profile.learningVelocity.toFixed(2),
@@ -265,7 +272,7 @@ export class HybridLearner {
     ) {
       try {
         return window.PALHybridAlgorithm.getNextDifficulty({
-          state: gameState,
+          state: this.#gameState,
         });
       } catch (e) {
         console.warn(
@@ -279,7 +286,7 @@ export class HybridLearner {
       typeof window.PALRLAlgorithm.getNextDifficulty === "function"
     ) {
       try {
-        return window.PALRLAlgorithm.getNextDifficulty({ state: gameState });
+        return window.PALRLAlgorithm.getNextDifficulty({ state: this.#gameState });
       } catch (e) {
         console.warn(
           "PALRLAlgorithm.getNextDifficulty failed, falling back:",
@@ -292,7 +299,7 @@ export class HybridLearner {
       typeof window.PALAlgorithm.getNextDifficulty === "function"
     ) {
       try {
-        return window.PALAlgorithm.getNextDifficulty({ state: gameState });
+        return window.PALAlgorithm.getNextDifficulty({ state: this.#gameState });
       } catch (e) {
         console.warn("PALAlgorithm.getNextDifficulty failed, falling back:", e);
       }
@@ -311,10 +318,10 @@ export class HybridLearner {
     if (profile.difficultyHistory.length < 3) return;
 
     const recent = profile.difficultyHistory.slice(-5);
-    const accuracyVariance = calculateVariance(
+    const accuracyVariance = this.calculateVariance(
       recent.map((q) => (q.correct ? 1 : 0))
     );
-    const responseTimeVariance = calculateVariance(
+    const responseTimeVariance = this.calculateVariance(
       recent.map((q) => q.responseTime)
     );
 
@@ -429,11 +436,11 @@ export class HybridLearner {
   }
 
   adjustForAccuracyPatterns(probs, profile) {
-    const easyAccuracy = calculateAccuracy(profile.accuracyByDifficulty.Easy);
-    const mediumAccuracy = calculateAccuracy(
+    const easyAccuracy = this.calculateAccuracy(profile.accuracyByDifficulty.Easy);
+    const mediumAccuracy = this.calculateAccuracy(
       profile.accuracyByDifficulty.Medium
     );
-    const hardAccuracy = calculateAccuracy(profile.accuracyByDifficulty.Hard);
+    const hardAccuracy = this.calculateAccuracy(profile.accuracyByDifficulty.Hard);
 
     const easyCount = profile.accuracyByDifficulty.Easy.length;
     const mediumCount = profile.accuracyByDifficulty.Medium.length;
@@ -532,7 +539,7 @@ export class HybridLearner {
     }
 
     // Negative momentum: Provide buffer before major changes
-    const consecutiveWrong = gameState.learnerProfile.consecutiveWrong;
+    const consecutiveWrong = this.#gameState.learnerProfile.consecutiveWrong;
     if (consecutiveWrong >= 3) {
       // Significant struggle - provide substantial support
       probs.Easy *= 1.5;
@@ -552,10 +559,10 @@ export class HybridLearner {
     // Context-aware difficulty stepping
     if (lastDiff === "Hard") {
       const lastResult =
-        gameState.learnerProfile.difficultyHistory.slice(-1)[0];
+        this.#gameState.learnerProfile.difficultyHistory.slice(-1)[0];
       if (!lastResult.correct) {
         // Failed hard question - but check if it's part of a pattern
-        const recentHardAttempts = gameState.learnerProfile.difficultyHistory
+        const recentHardAttempts = this.#gameState.learnerProfile.difficultyHistory
           .slice(-4)
           .filter((q) => q.difficulty === "Hard");
 
@@ -576,10 +583,10 @@ export class HybridLearner {
       }
     } else if (lastDiff === "Medium") {
       const lastResult =
-        gameState.learnerProfile.difficultyHistory.slice(-1)[0];
+        this.#gameState.learnerProfile.difficultyHistory.slice(-1)[0];
       if (!lastResult.correct) {
         // Failed medium - check for pattern before stepping down
-        const recentMediumAttempts = gameState.learnerProfile.difficultyHistory
+        const recentMediumAttempts = this.#gameState.learnerProfile.difficultyHistory
           .slice(-3)
           .filter((q) => q.difficulty === "Medium");
 

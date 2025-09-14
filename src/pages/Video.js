@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
 import { useLearningAppFascade } from "../useSingleton/useLearningAppFascade";
+import { useHybridLearner } from "../useSingleton/useHybridLearner";
 import sidebarStyles from "../stylesheets/sidebar.module.css";
 import videoContainerStyles from "../stylesheets/videoContainer.module.css";
 import QuestionCard from "../components/QuestionCard";
 import SummaryScreen from "../components/SummaryScreen";
-import HybridLearner from "../model/HybridLearner";
 
 function Video() {
   const navigate = useNavigate();
@@ -20,6 +20,7 @@ function Video() {
   const [questionDifficulty, setQuestionDifficulty] = useState("easy");
   const { videoFileName, questions, currentLesson, summary } =
     useLearningAppFascade();
+  const { handleAnswer } = useHybridLearner();
   const questionsChecked = questions || [];
   const timestamps = questionsChecked.map((question) =>
     question.getTimeStamp()
@@ -100,7 +101,6 @@ function Video() {
 
   return (
     <div className={sidebarStyles.body}>
-      <HybridLearner />
       <div className={sidebarStyles.sidebar}>
         <button name="home_button" type="button" onClick={MoveToMainScreen}>
           Home
@@ -120,6 +120,7 @@ function Video() {
           ].sort(() => Math.random() - 0.5)}
           togglePlay={togglePlay}
           style={{ display: playQuestion ? "block" : "none" }}
+          handleAnswer={handleAnswer}
         />
       ) : (
         <></>
