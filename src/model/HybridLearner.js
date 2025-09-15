@@ -11,20 +11,20 @@ export class HybridLearner {
       skillScore: 50,
       streak: 0,
       bestStreak: 0,
-      lastDifficulty: "Easy",
+      lastDifficulty: "easy",
       currentQuestionIndex: 0,
       showingQuestion: false,
       finished: false,
       selectedOption: null,
       currentQuestion: null,
-      currentDifficulty: null,
+      currentDifficulty: "medium",
       selectedLessonIndex: 0,
 
       // Enhanced personalization data
       learnerProfile: {
         responseTime: [], // Track how long user takes to answer
         difficultyHistory: [], // Track difficulty of last N questions
-        accuracyByDifficulty: { Easy: [], Medium: [], Hard: [] }, // Track accuracy per difficulty
+        accuracyByDifficulty: { easy: [], medium: [], hard: [] }, // Track accuracy per difficulty
         consecutiveCorrect: 0,
         consecutiveWrong: 0,
         preferredDifficulty: null, // Learned preference
@@ -62,37 +62,38 @@ export class HybridLearner {
     this.#listeners.forEach((fn) => fn());
   }
 
+  startQuestionTimer() {
+    this.#gameState.learnerProfile.questionStartTime = Date.now();
+  }
+
   getNextDifficulty() {
-    const nextDifficulty = this.#learner.getQuestionDifficulty(
-      this.#learner.#gameState.skillScore,
-      this.#learner.#gameState.streak,
-      this.#learner.#gameState.lastDifficulty
-    );
-    this.notify();
+    const nextDifficulty = this.#learner.getNextDifficulty({
+      state: this.#gameState,
+    });
     return nextDifficulty;
   }
 
   handleAnswer(correct) {
-    const updated = this.updateScore(this.#gameState, correct, this.#gameState.currentDifficulty);
+    const updated = this.updateScore( correct, this.#gameState.currentDifficulty);
     this.notify();
-    this.#gameState = { ...updated };
   }
 
   updateScore(correct, difficulty) {
     const profile = this.#gameState.learnerProfile;
+    console.log("updateScore called with:", { correct, difficulty, profile });
     const responseTime = Date.now() - profile.questionStartTime;
 
     // Update basic score and streak
     const oldScore = this.#gameState.skillScore;
     if (correct) {
-      const increment = { Easy: 2, Medium: 5, Hard: 8 }[difficulty];
+      const increment = { easy: 2, medium: 5, hard: 8 }[difficulty];
       this.#gameState.skillScore += increment;
       this.#gameState.streak += 1;
       this.#gameState.bestStreak = Math.max(this.#gameState.bestStreak, this.#gameState.streak);
       profile.consecutiveCorrect += 1;
       profile.consecutiveWrong = 0;
     } else {
-      const decrement = { Easy: 2, Medium: 4, Hard: 6 }[difficulty];
+      const decrement = { easy: 2, medium: 4, hard: 6 }[difficulty];
       this.#gameState.skillScore -= decrement;
       this.#gameState.streak = 0;
       profile.consecutiveWrong += 1;
@@ -153,13 +154,13 @@ export class HybridLearner {
       learningVelocity: profile.learningVelocity.toFixed(3),
       confidenceLevel: profile.confidenceLevel.toFixed(3),
       easyAccuracy: this.calculateAccuracy(
-        profile.accuracyByDifficulty.Easy
+        profile.accuracyByDifficulty.easy
       ).toFixed(2),
       mediumAccuracy: this.calculateAccuracy(
-        profile.accuracyByDifficulty.Medium
+        profile.accuracyByDifficulty.medium
       ).toFixed(2),
       hardAccuracy: this.calculateAccuracy(
-        profile.accuracyByDifficulty.Hard
+        profile.accuracyByDifficulty.hard
       ).toFixed(2),
     });
 
@@ -238,17 +239,17 @@ export class HybridLearner {
     probs = this.applySmoothingBuffer(probs, profile);
 
     // Ensure probabilities sum to 1
-    const total = probs.Easy + probs.Medium + probs.Hard;
-    probs.Easy /= total;
-    probs.Medium /= total;
-    probs.Hard /= total;
+    const total = probs.easy + probs.medium + probs.hard;
+    probs.easy /= total;
+    probs.medium /= total;
+    probs.hard /= total;
 
     // Log the algorithm's reasoning
     console.log("🤖 Algorithm Decision Process:", {
       finalProbabilities: {
-        Easy: (probs.Easy * 100).toFixed(1) + "%",
-        Medium: (probs.Medium * 100).toFixed(1) + "%",
-        Hard: (probs.Hard * 100).toFixed(1) + "%",
+        easy: (probs.easy * 100).toFixed(1) + "%",
+        medium: (probs.medium * 100).toFixed(1) + "%",
+        hard: (probs.hard * 100).toFixed(1) + "%",
       },
       recentAccuracy:
         profile.difficultyHistory.length > 0
@@ -311,7 +312,7 @@ export class HybridLearner {
       cumulative += prob;
       if (rand <= cumulative) return difficulty;
     }
-    return "Easy";
+    return "easy";
   }
 
   updateConfidenceLevel(profile) {
@@ -350,19 +351,19 @@ export class HybridLearner {
 
   calculateBaseProbabilities(score) {
     if (score <= 20) {
-      return { Easy: 0.85, Medium: 0.12, Hard: 0.03 };
+      return { easy: 0.85, medium: 0.12, hard: 0.03 };
     } else if (score <= 35) {
-      return { Easy: 0.75, Medium: 0.2, Hard: 0.05 };
+      return { easy: 0.75, medium: 0.2, hard: 0.05 };
     } else if (score <= 50) {
-      return { Easy: 0.55, Medium: 0.35, Hard: 0.1 };
+      return { easy: 0.55, medium: 0.35, hard: 0.1 };
     } else if (score <= 65) {
-      return { Easy: 0.35, Medium: 0.45, Hard: 0.2 };
+      return { easy: 0.35, medium: 0.45, hard: 0.2 };
     } else if (score <= 80) {
-      return { Easy: 0.2, Medium: 0.45, Hard: 0.35 };
+      return { easy: 0.2, medium: 0.45, hard: 0.35 };
     } else if (score <= 90) {
-      return { Easy: 0.1, Medium: 0.35, Hard: 0.55 };
+      return { easy: 0.1, medium: 0.35, hard: 0.55 };
     } else {
-      return { Easy: 0.05, Medium: 0.25, Hard: 0.7 };
+      return { easy: 0.05, medium: 0.25, hard: 0.7 };
     }
   }
 
@@ -378,9 +379,9 @@ export class HybridLearner {
     if (recentAccuracy >= 0.75 && recentHistory.length >= 4) {
       // Very high recent performance - gradual difficulty increase
       const performanceBonus = 1 + (recentAccuracy - 0.75) * 0.8; // Less aggressive
-      probs.Easy *= 0.85;
-      probs.Medium *= 0.95;
-      probs.Hard *= performanceBonus;
+      probs.easy *= 0.85;
+      probs.medium *= 0.95;
+      probs.hard *= performanceBonus;
       console.log(
         `🎯 Strong recent performance (${(recentAccuracy * 100).toFixed(
           0
@@ -388,9 +389,9 @@ export class HybridLearner {
       );
     } else if (recentAccuracy <= 0.25 && recentHistory.length >= 3) {
       // Very poor recent performance - provide support but not immediately drastic
-      probs.Easy *= 1.3;
-      probs.Medium *= 0.9;
-      probs.Hard *= 0.7;
+      probs.easy *= 1.3;
+      probs.medium *= 0.9;
+      probs.hard *= 0.7;
       console.log(
         `📉 Weak recent performance (${(recentAccuracy * 100).toFixed(
           0
@@ -405,7 +406,7 @@ export class HybridLearner {
       );
       // Slight bias toward their current performance level
       if (recentAccuracy > 0.5) {
-        probs.Medium *= 1.05; // Slight preference for medium
+        probs.medium *= 1.05; // Slight preference for medium
       }
     }
 
@@ -423,36 +424,36 @@ export class HybridLearner {
 
     // If answering much faster than average, might be too easy
     if (recentResponseTime < avgResponseTime * 0.6) {
-      probs.Easy *= 0.8;
-      probs.Hard *= 1.2;
+      probs.easy *= 0.8;
+      probs.hard *= 1.2;
     }
     // If answering much slower, might be too hard
     else if (recentResponseTime > avgResponseTime * 1.5) {
-      probs.Easy *= 1.2;
-      probs.Hard *= 0.8;
+      probs.easy *= 1.2;
+      probs.hard *= 0.8;
     }
 
     return probs;
   }
 
   adjustForAccuracyPatterns(probs, profile) {
-    const easyAccuracy = this.calculateAccuracy(profile.accuracyByDifficulty.Easy);
+    const easyAccuracy = this.calculateAccuracy(profile.accuracyByDifficulty.easy);
     const mediumAccuracy = this.calculateAccuracy(
-      profile.accuracyByDifficulty.Medium
+      profile.accuracyByDifficulty.medium
     );
-    const hardAccuracy = this.calculateAccuracy(profile.accuracyByDifficulty.Hard);
+    const hardAccuracy = this.calculateAccuracy(profile.accuracyByDifficulty.hard);
 
-    const easyCount = profile.accuracyByDifficulty.Easy.length;
-    const mediumCount = profile.accuracyByDifficulty.Medium.length;
-    const hardCount = profile.accuracyByDifficulty.Hard.length;
+    const easyCount = profile.accuracyByDifficulty.easy.length;
+    const mediumCount = profile.accuracyByDifficulty.medium.length;
+    const hardCount = profile.accuracyByDifficulty.hard.length;
 
     // BUFFER SYSTEM: Need more attempts before making major adjustments
 
     // Easy questions: Only reduce after mastery is clearly demonstrated
     if (easyAccuracy >= 0.85 && easyCount >= 4) {
       const masteryLevel = Math.min(1.5, 1 + (easyAccuracy - 0.85) * 2);
-      probs.Easy *= 0.8 / masteryLevel;
-      probs.Medium *= 1.1;
+      probs.easy *= 0.8 / masteryLevel;
+      probs.medium *= 1.1;
       console.log(
         `🎯 Easy mastery detected (${(easyAccuracy * 100).toFixed(
           0
@@ -464,9 +465,9 @@ export class HybridLearner {
     if (mediumCount >= 3) {
       if (mediumAccuracy <= 0.25) {
         // Very poor performance - provide significant support but not immediately
-        probs.Easy *= 1.4;
-        probs.Medium *= 0.7;
-        probs.Hard *= 0.5;
+        probs.easy *= 1.4;
+        probs.medium *= 0.7;
+        probs.hard *= 0.5;
         console.log(
           `📉 Medium struggling detected (${(mediumAccuracy * 100).toFixed(
             0
@@ -474,8 +475,8 @@ export class HybridLearner {
         );
       } else if (mediumAccuracy >= 0.8 && mediumCount >= 4) {
         // Strong performance - gradually increase challenge
-        probs.Medium *= 0.9;
-        probs.Hard *= 1.2;
+        probs.medium *= 0.9;
+        probs.hard *= 1.2;
         console.log(
           `📈 Medium mastery detected (${(mediumAccuracy * 100).toFixed(
             0
@@ -496,8 +497,8 @@ export class HybridLearner {
     if (hardCount >= 3) {
       if (hardAccuracy >= 0.75) {
         // Excellent performance on hard - they're ready for more
-        probs.Hard *= 1.25;
-        probs.Easy *= 0.85;
+        probs.hard *= 1.25;
+        probs.easy *= 0.85;
         console.log(
           `🔥 Hard mastery detected (${(hardAccuracy * 100).toFixed(
             0
@@ -505,8 +506,8 @@ export class HybridLearner {
         );
       } else if (hardAccuracy <= 0.2 && hardCount >= 4) {
         // Really struggling with hard questions - step back gradually
-        probs.Hard *= 0.6;
-        probs.Medium *= 1.2;
+        probs.hard *= 0.6;
+        probs.medium *= 1.2;
         console.log(
           `🛡️ Hard difficulty too high (${(hardAccuracy * 100).toFixed(
             0
@@ -524,8 +525,8 @@ export class HybridLearner {
     // Positive momentum: Build up gradually
     if (streak >= 5) {
       const streakBonus = Math.min(1.4, 1 + (streak - 4) * 0.08); // More gradual increase
-      probs.Hard *= streakBonus;
-      probs.Easy *= 2 - streakBonus;
+      probs.hard *= streakBonus;
+      probs.easy *= 2 - streakBonus;
       console.log(
         `🔥 Hot streak (${streak}) - difficulty boost: ${streakBonus.toFixed(
           2
@@ -533,8 +534,8 @@ export class HybridLearner {
       );
     } else if (streak >= 3) {
       // Moderate streak - small boost
-      probs.Hard *= 1.1;
-      probs.Easy *= 0.95;
+      probs.hard *= 1.1;
+      probs.easy *= 0.95;
       console.log(`📈 Good streak (${streak}) - slight difficulty increase`);
     }
 
@@ -542,37 +543,37 @@ export class HybridLearner {
     const consecutiveWrong = this.#gameState.learnerProfile.consecutiveWrong;
     if (consecutiveWrong >= 3) {
       // Significant struggle - provide substantial support
-      probs.Easy *= 1.5;
-      probs.Hard *= 0.4;
+      probs.easy *= 1.5;
+      probs.hard *= 0.4;
       console.log(
         `🆘 Major struggle (${consecutiveWrong} wrong) - providing strong support`
       );
     } else if (consecutiveWrong === 2) {
       // Minor struggle - gentle support
-      probs.Easy *= 1.2;
-      probs.Hard *= 0.8;
+      probs.easy *= 1.2;
+      probs.hard *= 0.8;
       console.log(
         `⚠️ Minor struggle (${consecutiveWrong} wrong) - gentle support`
       );
     }
 
     // Context-aware difficulty stepping
-    if (lastDiff === "Hard") {
+    if (lastDiff === "hard") {
       const lastResult =
         this.#gameState.learnerProfile.difficultyHistory.slice(-1)[0];
       if (!lastResult.correct) {
         // Failed hard question - but check if it's part of a pattern
         const recentHardAttempts = this.#gameState.learnerProfile.difficultyHistory
           .slice(-4)
-          .filter((q) => q.difficulty === "Hard");
+          .filter((q) => q.difficulty === "hard");
 
         if (recentHardAttempts.length >= 2) {
           const hardFailureRate =
             recentHardAttempts.filter((q) => !q.correct).length /
             recentHardAttempts.length;
           if (hardFailureRate >= 0.5) {
-            probs.Hard *= 0.4;
-            probs.Medium *= 1.4;
+            probs.hard *= 0.4;
+            probs.medium *= 1.4;
             console.log(
               `📉 Hard questions too difficult (${(
                 hardFailureRate * 100
@@ -581,14 +582,14 @@ export class HybridLearner {
           }
         }
       }
-    } else if (lastDiff === "Medium") {
+    } else if (lastDiff === "medium") {
       const lastResult =
         this.#gameState.learnerProfile.difficultyHistory.slice(-1)[0];
       if (!lastResult.correct) {
         // Failed medium - check for pattern before stepping down
         const recentMediumAttempts = this.#gameState.learnerProfile.difficultyHistory
           .slice(-3)
-          .filter((q) => q.difficulty === "Medium");
+          .filter((q) => q.difficulty === "medium");
 
         if (recentMediumAttempts.length >= 2) {
           const mediumFailureRate =
@@ -596,8 +597,8 @@ export class HybridLearner {
             recentMediumAttempts.length;
           if (mediumFailureRate >= 0.67) {
             // 2/3 failure rate
-            probs.Easy *= 1.3;
-            probs.Medium *= 0.8;
+            probs.easy *= 1.3;
+            probs.medium *= 0.8;
             console.log(
               `📉 Medium questions challenging (${(
                 mediumFailureRate * 100
@@ -614,13 +615,13 @@ export class HybridLearner {
   adjustForLearningVelocity(probs, profile) {
     // If improving rapidly, challenge more
     if (profile.learningVelocity > 0.3) {
-      probs.Hard *= 1.2;
-      probs.Easy *= 0.8;
+      probs.hard *= 1.2;
+      probs.easy *= 0.8;
     }
     // If declining, support more
     else if (profile.learningVelocity < -0.3) {
-      probs.Easy *= 1.2;
-      probs.Hard *= 0.8;
+      probs.easy *= 1.2;
+      probs.hard *= 0.8;
     }
 
     return probs;
@@ -629,13 +630,13 @@ export class HybridLearner {
   adjustForConfidence(probs, profile) {
     // Low confidence - be more conservative
     if (profile.confidenceLevel < 0.3) {
-      probs.Easy *= 1.1;
-      probs.Hard *= 0.9;
+      probs.easy *= 1.1;
+      probs.hard *= 0.9;
     }
     // High confidence - can take more risks
     else if (profile.confidenceLevel > 0.8) {
-      probs.Hard *= 1.1;
-      probs.Easy *= 0.9;
+      probs.hard *= 1.1;
+      probs.easy *= 0.9;
     }
 
     return probs;
@@ -647,14 +648,14 @@ export class HybridLearner {
 
     const recentDifficulties = profile.difficultyHistory.slice(-5);
     const recentDistribution = {
-      Easy:
-        recentDifficulties.filter((q) => q.difficulty === "Easy").length /
+      easy:
+        recentDifficulties.filter((q) => q.difficulty === "easy").length /
         recentDifficulties.length,
-      Medium:
-        recentDifficulties.filter((q) => q.difficulty === "Medium").length /
+      medium:
+        recentDifficulties.filter((q) => q.difficulty === "medium").length /
         recentDifficulties.length,
-      Hard:
-        recentDifficulties.filter((q) => q.difficulty === "Hard").length /
+      hard:
+        recentDifficulties.filter((q) => q.difficulty === "hard").length /
         recentDifficulties.length,
     };
 
@@ -662,20 +663,20 @@ export class HybridLearner {
     const maxChange = 0.4; // Maximum 40% change in probability
     const smoothingFactor = 0.7; // How much to blend with recent pattern
 
-    probs.Easy =
-      probs.Easy * (1 - smoothingFactor) +
-      recentDistribution.Easy * smoothingFactor;
-    probs.Medium =
-      probs.Medium * (1 - smoothingFactor) +
-      recentDistribution.Medium * smoothingFactor;
-    probs.Hard =
-      probs.Hard * (1 - smoothingFactor) +
-      recentDistribution.Hard * smoothingFactor;
+    probs.easy =
+      probs.easy * (1 - smoothingFactor) +
+      recentDistribution.easy * smoothingFactor;
+    probs.medium =
+      probs.medium * (1 - smoothingFactor) +
+      recentDistribution.medium * smoothingFactor;
+    probs.hard =
+      probs.hard * (1 - smoothingFactor) +
+      recentDistribution.hard * smoothingFactor;
 
     // Ensure no probability goes negative or exceeds reasonable bounds
-    probs.Easy = Math.max(0.05, Math.min(0.8, probs.Easy));
-    probs.Medium = Math.max(0.1, Math.min(0.6, probs.Medium));
-    probs.Hard = Math.max(0.05, Math.min(0.7, probs.Hard));
+    probs.easy = Math.max(0.05, Math.min(0.8, probs.easy));
+    probs.medium = Math.max(0.1, Math.min(0.6, probs.medium));
+    probs.hard = Math.max(0.05, Math.min(0.7, probs.hard));
 
     console.log(
       "🔧 Smoothing buffer applied - preventing dramatic difficulty swings"

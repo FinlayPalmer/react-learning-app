@@ -7,6 +7,7 @@ export function useHybridLearner() {
 
     useEffect(() => {
         const handleChange = () => {
+            console.log("Notification received. New difficulty is:", nextDifficulty);
             setNextDifficulty(hybridLearner.getNextDifficulty());
         };
         hybridLearner.subscribe(handleChange);
@@ -15,6 +16,7 @@ export function useHybridLearner() {
 
     return {
         handleAnswer: (correct) => hybridLearner.handleAnswer(correct),
+        startQuestionTimer: () => hybridLearner.startQuestionTimer(),
         nextDifficulty
     }
 }

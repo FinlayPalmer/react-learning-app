@@ -20,7 +20,7 @@ function Video() {
   const [questionDifficulty, setQuestionDifficulty] = useState("easy");
   const { videoFileName, questions, currentLesson, summary } =
     useLearningAppFascade();
-  const { handleAnswer } = useHybridLearner();
+  const { handleAnswer, nextDifficulty, startQuestionTimer } = useHybridLearner();
   const questionsChecked = questions || [];
   const timestamps = questionsChecked.map((question) =>
     question.getTimeStamp()
@@ -30,7 +30,7 @@ function Video() {
     navigate("/home");
   };
 
-  const ActivateChatbot = () => {};
+  const ActivateChatbot = () => { };
 
   const togglePlay = () => {
     const video = videoRef.current;
@@ -60,6 +60,13 @@ function Video() {
   };
 
   useEffect(() => {
+    if (nextDifficulty !== undefined) {
+      console.log("Difficulty changed to "+nextDifficulty);
+      setQuestionDifficulty(nextDifficulty);
+    }
+  }, [nextDifficulty]);
+
+  useEffect(() => {
     const video = videoRef.current;
     if (!video) {
       return;
@@ -70,6 +77,7 @@ function Video() {
         if (currentTime >= time && !triggered.has(time)) {
           video.pause();
           setVideoPlaying(false);
+          startQuestionTimer(); 
           setPlayQuestion(currentLesson.getQuestions()[index]);
           setTriggered((prev) => new Set(prev).add(time));
         }
@@ -81,7 +89,7 @@ function Video() {
     return () => {
       video.removeEventListener("timeupdate", handleTimeUpdate);
     };
-  }, [triggered, timestamps, videoFileName, currentLesson]);
+  }, [triggered, timestamps, videoFileName, currentLesson, startQuestionTimer]);
 
   if (videoIsEnded) {
     return (
@@ -89,9 +97,6 @@ function Video() {
         <div className={sidebarStyles.sidebar}>
           <button name="home_button" type="button" onClick={MoveToMainScreen}>
             Home
-          </button>
-          <button name="chatbot_button" type="button" onClick={ActivateChatbot}>
-            Chatbot
           </button>
         </div>
         <SummaryScreen totalCorrect={summary[0]} totalAnswered={summary[1]} />
@@ -139,10 +144,12 @@ function Video() {
           <source src={videoFileName} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+        <div className={videoContainerStyles.videoControlButtons}>
         <button onClick={togglePlay}>
           {videoPlaying ? "\u23F8" : "\u25B6"}
         </button>
-        <button onClick={fullScreen}></button>
+        <button onClick={fullScreen}>{"\u26F6"}</button>
+        </div>
       </div>
     </div>
   );

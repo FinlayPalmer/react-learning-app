@@ -39,18 +39,24 @@ export class Question {
   }
 
   getDifficulty(difficulty) {
-    return this.#allDifficultyQuestions.find(
-      (difficultyQuestion) => difficultyQuestion.getDifficulty() === difficulty
+    const question = this.#allDifficultyQuestions.find(
+      (q) => q.getDifficulty() === difficulty
     );
+
+    if (question) {
+      return question;
+    } else {
+      return this.#allDifficultyQuestions[0];
+    }
   }
 
   getTimeStamp() {
     return this.#timeStamp;
   }
 
-  getCorrectAnswer() {}
+  getCorrectAnswer() { }
 
-  isAnswerCorrect(answer) {}
+  isAnswerCorrect(answer) { }
 
   setUserGotAnswerCorrect(userGotAnswerCorrect) {
     this.#userGotAnswerCorrect = userGotAnswerCorrect;

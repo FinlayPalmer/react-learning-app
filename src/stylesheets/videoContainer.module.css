@@ -42,3 +42,10 @@
   background-color: #57577a;
   transform: scale(1.05);
 }
+
+.videoControlButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 200px;
+}

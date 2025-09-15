@@ -33,15 +33,14 @@ export class HybridPALAlgorithm {
 
   // Get next difficulty using hybrid approach
   getNextDifficulty(ctx) {
-    const state = ctx.state;
     this.decisionCount++;
 
     // Determine blending weights
-    const weights = this.calculateBlendingWeights(state);
+    const weights = this.calculateBlendingWeights(ctx.state);
 
     // Get predictions from both algorithms
-    const statisticalPred = this.getStatisticalPrediction(state);
-    const rlPred = this.getRLPrediction(state);
+    const statisticalPred = this.getStatisticalPrediction(ctx.state);
+    const rlPred = this.getRLPrediction(ctx.state);
 
     // Blend predictions
     const finalPrediction = this.blendPredictions(
@@ -130,9 +129,9 @@ export class HybridPALAlgorithm {
 
     // Fallback to simple statistical approach
     const score = state.skillScore;
-    if (score <= 30) return "Easy";
-    if (score <= 70) return "Medium";
-    return "Hard";
+    if (score <= 30) return "easy";
+    if (score <= 70) return "medium";
+    return "hard";
   }
 
   // Get RL prediction
@@ -142,7 +141,7 @@ export class HybridPALAlgorithm {
     }
 
     // Fallback to random if RL not available
-    const difficulties = ["Easy", "Medium", "Hard"];
+    const difficulties = ["easy", "medium", "hard"];
     return difficulties[Math.floor(Math.random() * difficulties.length)];
   }
 

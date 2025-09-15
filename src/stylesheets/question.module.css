@@ -1,7 +1,7 @@
 .questionContainer {
   justify-content: center;
   width: 640px;
-  height: 360px;
+  min-height: 360px;
   margin: 0 auto;
   padding: 2rem;
   background-color: #fdfdfd;
@@ -52,4 +52,14 @@
   text-align: center;
   transition: all 0.2s ease-in-out;
   transform: scale(1.02);
+}
+
+.submitButton {
+  display: flex;
+  justify-content: right;
+}
+
+.playButton {
+  display: flex;
+  justify-content: center;
 }

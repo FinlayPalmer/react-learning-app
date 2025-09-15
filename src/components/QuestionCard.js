@@ -27,7 +27,7 @@ function QuestionCard(props) {
       {!submitClicked ? (
         <div className={questionStyles.questionContainer}>
           <p className={questionStyles.questionContainerTitle}>
-            {props.question.getDifficulty(props.difficulty).getQuestion()}
+            {props.question.getDifficulty(props.difficulty).getQuestion() + props.difficulty}
           </p>
           <div className={questionStyles.questionOptions}>
             {props.scrambledQuestionOptions.map((questionAnswer) =>
@@ -48,7 +48,9 @@ function QuestionCard(props) {
               )
             )}
           </div>
-          <button onClick={answerQuestion}>{"\u21B5"}</button>
+          <div className={questionStyles.submitButton}>
+            <button onClick={answerQuestion}>{"\u21B5"}</button>
+          </div>
         </div>
       ) : correctClicked ? (
         <div className={questionStyles.questionContainer}>
@@ -63,8 +65,10 @@ function QuestionCard(props) {
       ) : (
         <div className={questionStyles.questionContainer}>
           <p className={questionStyles.questionContainerTitle}>Incorrect!</p>
-          <button>Let's figure out why</button>
-          <button onClick={props.togglePlay}>{"\u25B6"}</button>
+          <p>{"Correct Answer: " + props.question.getDifficulty(props.difficulty).getQuestionOptions()[0]}</p>
+          <div className={questionStyles.playButton}>
+            <button onClick={props.togglePlay}>{"\u25B6"}</button>
+          </div>
         </div>
       )}
     </div>
