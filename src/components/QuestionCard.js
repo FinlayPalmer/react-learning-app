@@ -27,7 +27,7 @@ function QuestionCard(props) {
       {!submitClicked ? (
         <div className={questionStyles.questionContainer}>
           <p className={questionStyles.questionContainerTitle}>
-            {props.question.getDifficulty(props.difficulty).getQuestion() + props.difficulty}
+            {props.question.getDifficulty(props.difficulty).getQuestion()}
           </p>
           <div className={questionStyles.questionOptions}>
             {props.scrambledQuestionOptions.map((questionAnswer) =>

@@ -6,6 +6,7 @@ export class Lesson {
     #thumbnailFileName;
     #vidFileName;
     #id;
+    #concepts;
 
     constructor(id, title, questions, thumbnailFileName, vidFidName) {
         this.#id = id;
@@ -20,6 +21,15 @@ export class Lesson {
         this.#thumbnailFileName = thumbnailFileName;
         this.#vidFileName = vidFidName;
         console.log("Lesson constructor questions:", this.#questions, Array.isArray(questions));
+        this.#concepts = [];
+    }
+
+    addConcept(concept) {
+        this.#concepts.addConcept(concept);
+    }
+
+    getConcepts() {
+        return this.#concepts;
     }
 
     getId() {

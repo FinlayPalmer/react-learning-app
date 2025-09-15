@@ -110,9 +110,6 @@ function Video() {
         <button name="home_button" type="button" onClick={MoveToMainScreen}>
           Home
         </button>
-        <button name="chatbot_button" type="button" onClick={ActivateChatbot}>
-          Chatbot
-        </button>
       </div>
       {playQuestion ? (
         <QuestionCard
