@@ -30,8 +30,6 @@ function Video() {
     navigate("/home");
   };
 
-  const ActivateChatbot = () => { };
-
   const togglePlay = () => {
     const video = videoRef.current;
     setPlayQuestion(null);
@@ -61,7 +59,7 @@ function Video() {
 
   useEffect(() => {
     if (nextDifficulty !== undefined) {
-      console.log("Difficulty changed to "+nextDifficulty);
+      console.log("Difficulty changed to " + nextDifficulty);
       setQuestionDifficulty(nextDifficulty);
     }
   }, [nextDifficulty]);
@@ -77,7 +75,7 @@ function Video() {
         if (currentTime >= time && !triggered.has(time)) {
           video.pause();
           setVideoPlaying(false);
-          startQuestionTimer(); 
+          startQuestionTimer();
           setPlayQuestion(currentLesson.getQuestions()[index]);
           setTriggered((prev) => new Set(prev).add(time));
         }
@@ -142,10 +140,10 @@ function Video() {
           Your browser does not support the video tag.
         </video>
         <div className={videoContainerStyles.videoControlButtons}>
-        <button onClick={togglePlay}>
-          {videoPlaying ? "\u23F8" : "\u25B6"}
-        </button>
-        <button onClick={fullScreen}>{"\u26F6"}</button>
+          <button onClick={togglePlay}>
+            {videoPlaying ? "\u23F8" : "\u25B6"}
+          </button>
+          <button onClick={fullScreen}>{"\u26F6"}</button>
         </div>
       </div>
     </div>
