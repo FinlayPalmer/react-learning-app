@@ -2,7 +2,6 @@ import os
 import argparse
 import torch
 from flask import Flask, request, jsonify, send_from_directory
-from flask_cors import CORS
 from transformers import pipeline
 from sentence_transformers import SentenceTransformer, util
 
@@ -14,13 +13,6 @@ parser = argparse.ArgumentParser(description="Run the AI summary agent server.")
 parser.add_argument('-p', '--port', type=int, default=5000, help="Port to run the server on.")
 args = parser.parse_args()
 app = Flask(__name__)
-# Allow your React dev server
-CORS(app)
-@app.route("/generate-summaries-batch", methods=["POST", "OPTIONS"])
-def summaries():
-    return {"message": "ok"}
-
-app.run(port=6000)
 
 # --- 2. MODEL LOADING: Upgraded to Llama-3.2-1B-Instruct ---
 print("Loading Llama-3.2-1B-Instruct model for synthesis... This may take several minutes.")

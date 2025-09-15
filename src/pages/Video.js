@@ -18,18 +18,31 @@ function Video() {
   const [triggered, setTriggered] = useState(new Set());
   const [playQuestion, setPlayQuestion] = useState(null);
   const [questionDifficulty, setQuestionDifficulty] = useState("easy");
-  const { videoFileName, questions, currentLesson, summary } =
-    useLearningAppFascade();
+  const { videoFileName, questions, currentLesson, summary } = useLearningAppFascade();
   const { handleAnswer, nextDifficulty, startQuestionTimer } = useHybridLearner();
   const questionsChecked = questions || [];
   const timestamps = questionsChecked.map((question) =>
     question.getTimeStamp()
   );
 
+  // Home button is pressed
   const MoveToMainScreen = () => {
     navigate("/home");
   };
 
+  // Fullscreen button is pressed
+  const fullScreen = () => {
+    if (inFullscreen) {
+      setVideoWidth(640);
+      setVideoHeight(360);
+    } else {
+      setVideoWidth(1280);
+      setVideoHeight(720);
+    }
+    SetInFullscreen(!inFullscreen);
+  };
+
+  // Video is paused or played
   const togglePlay = () => {
     const video = videoRef.current;
     setPlayQuestion(null);
@@ -42,24 +55,14 @@ function Video() {
     }
   };
 
+  // Video is over
   const videoEnded = () => {
     setVideoIsEnded(true);
   };
 
-  const fullScreen = () => {
-    if (inFullscreen) {
-      setVideoWidth(640);
-      setVideoHeight(360);
-    } else {
-      setVideoWidth(1280);
-      setVideoHeight(720);
-    }
-    SetInFullscreen(!inFullscreen);
-  };
-
+  // Utilitizes Hybrid Learner to get difficulty for next question
   useEffect(() => {
     if (nextDifficulty !== undefined) {
-      console.log("Difficulty changed to " + nextDifficulty);
       setQuestionDifficulty(nextDifficulty);
     }
   }, [nextDifficulty]);
@@ -72,6 +75,7 @@ function Video() {
     const handleTimeUpdate = () => {
       const currentTime = video.currentTime;
       timestamps.forEach((time, index) => {
+        // Plays question when currentTime == timestamp of question
         if (currentTime >= time && !triggered.has(time)) {
           video.pause();
           setVideoPlaying(false);
@@ -81,15 +85,14 @@ function Video() {
         }
       });
     };
-
     video.addEventListener("timeupdate", handleTimeUpdate);
-
     return () => {
       video.removeEventListener("timeupdate", handleTimeUpdate);
     };
   }, [triggered, timestamps, videoFileName, currentLesson, startQuestionTimer]);
 
   if (videoIsEnded) {
+    // Returns summary screen if video finishes
     return (
       <div className={sidebarStyles.body}>
         <div className={sidebarStyles.sidebar}>
@@ -109,7 +112,7 @@ function Video() {
           Home
         </button>
       </div>
-      {playQuestion ? (
+      {playQuestion &&
         <QuestionCard
           question={playQuestion}
           difficulty={questionDifficulty}
@@ -119,12 +122,11 @@ function Video() {
               .getQuestionOptions(),
           ].sort(() => Math.random() - 0.5)}
           togglePlay={togglePlay}
+          // Renders video without a display if question is being shown
           style={{ display: playQuestion ? "block" : "none" }}
           handleAnswer={handleAnswer}
-        />
-      ) : (
-        <></>
-      )}
+        />}
+      {/* Renders video with a display if question is not being shown */}
       <div
         className={videoContainerStyles.videoContainer}
         style={{ display: playQuestion ? "none" : "flex" }}
