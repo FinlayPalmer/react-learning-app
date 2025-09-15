@@ -17,7 +17,7 @@ export class HybridLearner {
       finished: false,
       selectedOption: null,
       currentQuestion: null,
-      currentDifficulty: "medium",
+      currentDifficulty: null,
       selectedLessonIndex: 0,
 
       // Enhanced personalization data

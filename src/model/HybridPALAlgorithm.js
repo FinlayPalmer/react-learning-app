@@ -1,9 +1,3 @@
-// PAL Hybrid Algorithm: Statistical + RL with Interpretable Blending
-// Exposes window.PALHybridAlgorithm with:
-// - getNextDifficulty({ state })
-// - updateProfileAfterAnswer(state, correct, difficulty, responseTime)
-// - getDecisionExplanation() - for interpretability
-
 // Hybrid Configuration
 const HYBRID_CONFIG = {
   initialRLWeight: 0.3, // Start with 30% RL influence
